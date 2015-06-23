@@ -1,0 +1,93 @@
+﻿<Window x:Class="Market.ClientWPF.View.User.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="167" Width="376" WindowStyle="ToolWindow"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+               Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\login.png"
+               Width="40"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="1"
+                   Margin="4,8,10,8"
+                   Text="Логин:"/>
+        <TextBlock Grid.Row="1" Grid.Column="1"
+                   Margin="4,8,10,8"
+                   Text="Пароль:"/>
+
+        <TextBox Grid.Row="0" Grid.Column="2"
+                    Margin="4,8,4,8"
+                    MinWidth="100" MaxWidth="120"
+                    Text="{Binding Login,
+                    ValidatesOnDataErrors=True}"
+                    Name="txtLogin">
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <ItemsControl ItemsSource="{Binding}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding ErrorContent}" Foreground="Red"
+                                               FontSize="9" FontStyle="Italic"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <!--<TextBox Grid.Row="1" Grid.Column="2"
+                    Margin="4,8,4,8"
+                    MinWidth="100" MaxWidth="120"
+                    Text="{Binding PWord,
+                    Mode=TwoWay,
+                    ValidatesOnDataErrors=True}">
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>-->
+        <!--Placeholder for the TextBox itself -->
+        <!--<AdornedElementPlaceholder x:Name="textBox"/>
+                        <ItemsControl ItemsSource="{Binding}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding ErrorContent}" Foreground="Red"
+                                               FontSize="9" FontStyle="Italic"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>-->
+        <PasswordBox Grid.Row="1" Grid.Column="2"
+                    Margin="4,8,4,8"
+                    MinWidth="100" MaxWidth="120"
+                    Name="pwdBox"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                    Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Войти" 
+                    Margin="4,8,10,8" Padding="4,2"
+                    Name="btnLogin" Click="btnLogin_OnClick"/>
+                    <!-- Command="{Binding LoginCommand}"-->
+            <Button Content="Регистация"
+                    Margin="4,8,10,8" Padding="4,2"
+                    Command="{Binding RegisterCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>

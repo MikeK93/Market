@@ -1,0 +1,13 @@
+<StyleCopSettings Version="105">
+  <Analyzers>
+    <Analyzer AnalyzerId="StyleCopPlus.StyleCopPlusRules">
+      <AnalyzerSettings>
+        <StringProperty Name="AdvancedNaming_LocalVariable">$(aaBb):_$(aabb):$(a)$(*)$(AABB):$(a)$(*)$(AABB)$(aabb)</StringProperty>
+        <StringProperty Name="AdvancedNaming_Parameter">$(aaBb):_$(aabb)</StringProperty>
+        <StringProperty Name="AdvancedNaming_MethodPrivateEventHandler">$(AaBb):$(aaBb)_$(AaBb):$(AaBb)_$(AaBb):$(aaBb)$(AABB)_$(AaBb)</StringProperty>
+        <StringProperty Name="AdvancedNaming_PrivateInstanceField">_$(aaBb):_$(a)$(*)$(AABB)$(a):_$(a)$(*)$(AABB):_$(a)$(*)$(AABB)$(a)$(AaBb)</StringProperty>
+        <StringProperty Name="AdvancedNaming_Namespace">$(AaBb):$(AABB)</StringProperty>
+      </AnalyzerSettings>
+    </Analyzer>
+  </Analyzers>
+</StyleCopSettings>

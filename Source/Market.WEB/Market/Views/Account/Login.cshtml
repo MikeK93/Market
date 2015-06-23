@@ -1,0 +1,43 @@
+﻿@model Market.Models.LoginModel
+
+@{
+    ViewBag.Title = "Вход";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div id="form_wrapper" class="form_wrapper">
+    <div class="login">
+        <div id="title">
+            <h3>@ViewBag.Title</h3>
+        </div>
+
+        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <div class="row">
+                <label for="UserName">Логин:</label>
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+            <div class="row">
+                <label for="Password">Пароль:</label>
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div class="bottom">
+                <input class="button" type="submit" value="Войти" />
+                <div id="bottom">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    <label for="RememberMe" class="checkbox">Запомнить меня.</label>
+                </div>
+            </div>
+            <div style="margin-top: -5%; text-align: center;">
+                <p class="links">
+                    @Html.ActionLink("Нет аккаунта? Регистрация сдесь:)", "Register")
+                </p>
+            </div>
+        }
+    </div>
+</div>

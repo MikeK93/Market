@@ -1,0 +1,20 @@
+﻿@model  Market.Model.Entities.Customer
+
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("menuitem_index").firstChild.style.borderRight = "4px solid #d35400";
+        document.getElementById("menuitem_marketMap").firstChild.style.borderRight = "4px solid #e67e22";
+        document.getElementById("menuitem_listOfMerhcandise").firstChild.style.borderRight = "4px solid #587fae";
+    }
+</script>
+
+<div style="margin-top: 40px;">
+    <div class="navbox">
+        <ul class="nav">
+            <li id="menuitem_index">@Html.ActionLink("Персональная информация", "Index", "Customer", new { cId = Model.IDString }, null)</li>
+            <li id="menuitem_marketMap">@Html.ActionLink("Маркет", "MarketMap", "Customer", new { cId = Model.IDString }, null)</li>
+            <li id="menuitem_listOfMerhcandise">@Html.ActionLink("Список товаров", "Index", "ListOfMerchandise", new { cId = Model.IDString, searchTerm = string.Empty, categories = string.Empty }, null)</li>
+            @Html.Partial("~/Views/Customer/_ShoppingCart.cshtml")
+        </ul>
+    </div>
+</div>

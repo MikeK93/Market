@@ -1,0 +1,10 @@
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\obj\Debug\Market.ClientDAL.csprojResolveAssemblyReference.cache
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.ClientDAL.dll.config
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.ClientDAL.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.ClientDAL.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.Middleware.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.Middleware.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\obj\Debug\Market.ClientDAL.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\obj\Debug\Market.ClientDAL.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.ServiceCore.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.ServiceCore.pdb

@@ -1,0 +1,44 @@
+﻿@model Market.Model.Entities.User
+
+@{
+    ViewBag.Title = "Вход";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div id="form_wrapper" class="form_wrapper">
+    @using (Html.BeginForm("Index", "User", FormMethod.Post))
+    {
+        <div class="login">
+            <div id="title">
+                <h3>Вход</h3>
+            </div>
+
+            <form>
+                <div class="row">
+                    <label>Логин:</label>
+                    @Html.TextBoxFor(m => m.Login)
+                    @Html.ValidationMessageFor(m => m.Login)
+                </div>
+                <div class="row">
+                    <label>Пароль:</label>
+                    @Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <div class="bottom">
+
+                    <input class="button" type="submit" value="Войти" />
+
+                    <div id="bottom">
+                        <input type="checkbox" />
+                        <span>Запомнить меня</span>
+                    </div>
+                </div>
+            </form>
+            <div style="margin-top: -5%; text-align: center;">
+                <p class="links">
+                    @Html.ActionLink("У Вас все еще нет аккаунта? Регистрация сдесь :)", "", "User")
+                </p>
+            </div>
+        </div>
+    }
+</div>

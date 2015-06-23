@@ -1,0 +1,13 @@
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\bin\Debug\Test.exe.config
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\bin\Debug\Test.exe
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\bin\Debug\Test.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\MainWindow.baml
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\MainWindow.g.cs
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\App.g.cs
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\Test_MarkupCompile.cache
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\Test.g.resources
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\Test.Properties.Resources.resources
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\Test.exe
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Test\obj\Debug\Test.pdb

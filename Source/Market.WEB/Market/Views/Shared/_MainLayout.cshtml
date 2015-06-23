@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Главная";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - ShopAll</title>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/main_css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+    <style type="text/css">
+        h2
+        {
+            font-family: 'Century Schoolbook';
+            font-size: 22px;
+            font-style: italic;
+        }
+
+        p.about_font
+        {
+            font-family: 'Century Gothic';
+            font-size: 14px;
+            font-style: italic;
+            line-height: 26px;
+        }
+
+        .menu_item
+        {
+            height: 35px;
+            width: 160px;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="SITE_ROOT" style="width: 980px; padding-bottom: 1px;">
+        <div id="SITE_STRUCTURE" style="width: 980px; height: 1123px;">
+            <!-- menu bar -->
+            <div style="top: 0px; height: 47px; width: 980px; left: 0px;">
+                <!-- menu bar -->
+                <div id="SITE_HEADER" class="ItemsContainer" style="top: 10px; height: 35px; width: 980px; left: 0px;">
+                    <!-- main -->
+                    <div class="menu_item">
+                        <div>
+                            <div style="text-align: center;">
+                                <p class="link-section" style="line-height: 35px; text-align: center;">
+                                    @Html.ActionLink("ГЛАВНАЯ", "Index", "Main")
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- customer's corner -->
+                    <div class="menu_item">
+                        <div style="text-align: center;">
+                            <p class="link-section" style="line-height: 35px; text-align: center;">
+                                @Html.ActionLink("ПОКУПАТЕЛЮ", "Customer", "Main")
+                            </p>
+                        </div>
+                    </div>
+                    <!-- salesperson's corner -->
+                    <div class="menu_item">
+                        <div style="text-align: center;">
+                            <p class="link-section" style="line-height: 35px; text-align: center;">
+                                @Html.ActionLink("ПРОДАВЦУ", "Salesperson", "Main")
+                            </p>
+                        </div>
+                    </div>
+                    <!-- dealer's corner -->
+                    <div class="menu_item">
+                        <div style="text-align: center;">
+                            <p class="link-section" style="line-height: 33px; text-align: center;">
+                                @Html.ActionLink("ПОСТАВЩИКУ", "Dealer", "Main")
+                            </p>
+                        </div>
+                    </div>
+                    <!-- login/registrate -->
+                    <div class="menu_item" style="margin-left: 13%;">
+                        <div style="text-align: center;">
+                            <p class="link-section" style="line-height: 33px; text-align: center;">
+                                <section id="login">
+                                    @Html.Partial("_LoginPartial")
+                                </section>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- content -->
+            @RenderBody()
+
+            <!-- footer -->
+            <div id="fotter">
+                <div style="margin-left: 1%; margin-top: 2%; margin-bottom: 3%; float: left; width: 80%;">
+                    <p class="footer_font">
+                        © 2015 Компания «ShopAll».
+                    </p>
+                </div>
+                <div style="margin-left: 1%; margin-top: 2%; margin-bottom: 3%;">
+                    <p class="footer_font">
+                        <cite>ул. Киевская 33Б, Киев</cite>
+                        <br />
+                        Эл. почта: shopall@gmail.com
+                        <br />
+                        Тел. номер: +38 (044) 213-44-12
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/market")
+</body>
+</html>

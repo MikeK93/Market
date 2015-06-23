@@ -1,0 +1,7 @@
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\session8 (mvc)\Market\Market.Security\obj\Debug\Market.Security.csprojResolveAssemblyReference.cache
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\session8 (mvc)\Market\Market.Security\bin\Debug\Market.Security.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\session8 (mvc)\Market\Market.Security\bin\Debug\Market.Security.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\session8 (mvc)\Market\Market.Security\bin\Debug\Market.Middleware.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\session8 (mvc)\Market\Market.Security\bin\Debug\Market.Middleware.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\session8 (mvc)\Market\Market.Security\obj\Debug\Market.Security.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\session8 (mvc)\Market\Market.Security\obj\Debug\Market.Security.pdb

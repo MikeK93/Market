@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Покупателю";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<style type="text/css">
+    div#customer-corner div.imgs
+    {
+        float: left;
+        height: 391px;
+        position: relative;
+        width: 100%;
+    }
+
+        div#customer-corner div.imgs img
+        {
+            position: absolute;
+            margin-left: 32%;
+        }
+
+            div#customer-corner div.imgs img#img-icon-1
+            {
+                width: 280px;
+                margin-left: 30%;
+            }
+
+            div#customer-corner div.imgs img#img-icon-2
+            {
+                margin-top: 103px;
+                margin-left: 45%;
+            }
+
+            div#customer-corner div.imgs img#img-icon-3
+            {
+                margin-top: 180px;
+                margin-left: 31%;
+            }
+
+            div#customer-corner div.imgs img#img-icon-4
+            {
+                margin-left: 20%;
+                margin-top: 124px;
+                width: 213px;
+            }
+
+    div#customer-corner div.content
+    {
+        line-height: 27px;
+        font-family: Century Gothic;
+        font-size: 20px;
+        font-style: italic;
+    }
+
+        div#customer-corner div.content div#content-login img
+        {
+            width: 135px;
+            float: left;
+            margin-left: 46%;
+        }
+</style>
+
+<div id="customer-corner" style="margin-left: 1%; width: 980px;">
+    @* imgs *@
+    <div class="imgs">
+        <img id="img-icon-1" src="~/Content/imgs/main-page/many-items.png" />
+        <img id="img-icon-2" src="~/Content/imgs/main-page/quick.png" />
+        <img id="img-icon-3" src="~/Content/imgs/main-page/relationship-guarantee.png" />
+        <img id="img-icon-4" src="~/Content/imgs/main-page/quality.png" />
+    </div>
+    @* text and login *@
+    <div class="content">
+        @* text *@
+        <div id="content-text" class="column">
+            <p>Компания ShopAll представляет возможность покупателям приобрести то что они искали по всему интеренету... Пользователям которые были зарегистрированы предстает масса возможностей... Магазины по всему Киеву, а дальше и по всему свету... Товары которые трудно найти есть в наличие у Нас в магазинах...</p>
+        </div>
+        @* login *@
+        <div id="content-login" class="column">
+            <img src="~/Content/imgs/main-page/user-flat-icon.png" />
+            <div style="width: 100%; float: left; text-align: center; margin-left: 9%;">
+                @Html.ActionLink("Вход/Регистрация", "Login", "Account")
+            </div>
+        </div>
+    </div>
+</div>

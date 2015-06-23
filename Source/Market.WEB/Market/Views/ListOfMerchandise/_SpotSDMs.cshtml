@@ -1,0 +1,88 @@
+﻿@model IList<Market.Model.Entities.SpotSDM>
+
+<script type="text/javascript">
+    // onMore_Click *begin
+    function onMore_Click(sender) {
+        var ssdmId = $(sender).attr("data-ssdm-id");
+        var placeholder = $("div#" + ssdmId);
+        if ($(placeholder).is(":visible")) {
+            $(placeholder).slideUp("slow", function () { $(sender).text("Больше"); });
+        }
+        else {
+            $(placeholder).slideDown("slow", function () { $(sender).text("Меньше"); });
+        }
+    }// onMore_Click *end
+
+    // Adding new sdm
+    function add(sender) {
+        var merchId = $(sender).closest("div.merch-item").attr("id");
+        console.log("try add sdm with id: " + merchId);
+        var customerId = $("li#menuitem_index").children().first().attr("href").split("=")[1];
+        $.ajax({
+            url: '@Url.Action("AddMerchandise", "Customer")',
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ cId: customerId, sdmId: merchId }),
+            datatype: "json",
+            success: function (data) {
+                successfulAdding(data, merchId);
+            },
+            error: function () {
+                alert("error while adding new merchandise :'(");
+            }
+        });
+    }
+
+    function successfulAdding(data, merchId) {
+        if (data["added"] == true) {
+            console.log("added animation");
+            $(".selected-items-count").text(data["count"]);
+            $("div#" + merchId)
+                .switchClass("merch-item", "item-added", 1000)
+                .switchClass("item-added", "merch-item", 1000);
+        } else {
+            console.log("not added animation");
+            $("div#" + merchId)
+                .switchClass("merch-item", "item-not-added", 1000)
+                .switchClass("item-not-added", "merch-item", 1000);
+        }
+    }
+</script>
+
+<div id="merch-list">
+    @foreach (var ssdm in Model)
+    {
+        var icon = "/Content/imgs/merchandise/" + ssdm.SDM.Merchendise.Categories.First().Name.ToLower() + ".png";
+        var ssdmId = ssdm.ID;
+        <div id='@ssdm.SDMID' class="merch-item">
+            <img src='@icon' class="merch-icon" />
+            <h2>@ssdm.SDM.Merchendise.Name</h2>
+            <h4>@ssdm.SDM.Merchendise.Tags</h4>
+            <h3 class="more" onclick="onMore_Click(this);" data-ssdm-id="@ssdmId">Больше</h3>
+            <div id="@ssdmId" class="additional-info">
+                @* spot info *@
+                <div class="spot">
+                    <img src="~/Content/imgs/market-v.2.png" />
+                    <h3>№@ssdm.Spot.Number</h3>
+                    <h4>Работает с: @ssdm.Spot.DateStart.ToShortDateString()</h4>
+                </div>
+                @* salesperson info *@
+                <div class="salesperson">
+                    @if (ssdm.SDM.Salesperson.Gender == Market.Model.Entities.GenderType.Male)
+                    {
+                        <img src="~/Content/imgs/man.png" />
+                    }
+                    else
+                    {    
+                        <img src="~/Content/imgs/woman.png" />
+                    }
+                    <h3>@ssdm.SDM.Salesperson.Initials</h3>
+                    <h4>@ssdm.SDM.Salesperson.Email</h4>
+                    <h4>@ssdm.SDM.Salesperson.PhoneNumber</h4>
+                </div>
+            </div>
+            <h1>@ssdm.SDM.Cost грн.</h1>
+            <img src="~/Content/imgs/cart-add-icon.png" class="merch-add" onclick="add(this);" />
+        </div>
+    }
+</div>

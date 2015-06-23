@@ -1,0 +1,91 @@
+﻿@model Market.Model.Entities.Customer
+
+@{
+    ViewBag.Title = "Корзина";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<script type="text/javascript">
+    function addMore(sender) {
+        var url = '@Url.Action("MarketMap", "Customer", new { cId = Model.IDString })';
+        window.location.href = url;
+    }
+
+    function stateHandler(btn) {
+        var _id = $(btn).closest("li.csi-item").attr("id").toString();
+        setState(_id, btn);
+    }
+
+    function setState(_csiId, btn) {
+        $.ajax({
+            url: "/Customer/SetStateCSI",
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ csiId: _csiId }),
+            success: function (confirmed) {
+                if ($(btn).hasClass("non-confirmed-btn")) {
+                    $(btn).removeClass("non-confirmed-btn");
+                    $(btn).addClass("confirmed-btn");
+                    $(btn).attr("value", "Отменить");
+                }
+                else {
+                    $(btn).removeClass("confirmed-btn");
+                    $(btn).addClass("non-confirmed-btn");
+                    $(btn).attr("value", "Подтвердить");
+                }
+            },
+            error: function () {
+                alert("Ошибка при изминении статуса товара!");
+            }
+        });
+    }
+
+    function deleteHandler(btn) {
+        if (confirm("Вы уверенны что хотите удалить выбраный элемент?")) {
+            var _id = $(btn).closest("li.csi-item").attr("id").toString();
+            deleteItem(_id);
+        }
+    }
+
+    function deleteItem(_csiId) {
+        $.ajax({
+            url: "/Customer/DeleteCSI",
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ csiId: _csiId }),
+            success: function (data) {
+                //$("li.csi-item#" + _csiId).animate({ height: "toggle" }, 1000);
+                $("li.csi-item#" + _csiId).remove();
+                $(".selected-items-count").text(data["count"]);
+                $(".sum").text(data["sum"] + "(грн.)");
+            },
+            error: function () {
+                alert("Ошибка при удалении!");
+            }
+        });
+    }
+
+
+</script>
+<!-- menu + shopping_cart -->
+@Html.Partial("_SideMenu", Model)
+
+<!-- selected items block -->
+<div class="content_wrapper" style="width: 75%; margin-left: 3%;">
+    <div class="cart-title">
+        <h2 class="title">Корзина</h2>
+    </div>
+    <ul>
+        @foreach (var csi in Model.CSIs)
+        {
+            @Html.Partial("_CSI", csi)
+        }
+    </ul>
+    <div style="width: 100%; text-align: center; height: 125px;">
+        <img id="continue-shopping" src="~/Content/imgs/add-icon.png" width="42" onclick="addMore(this);" alt="icon add" />
+    </div>
+    <div class="cart-footer">
+        <h2 class="capacity">У Вас <b class="selected-items-count">@Model.CSIs.Count</b> товаров на сумму:</h2>
+        <p class="sum">@Model.CSIsSum (грн.)</p>
+    </div>
+</div>

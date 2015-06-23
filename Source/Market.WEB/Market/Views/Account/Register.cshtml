@@ -1,0 +1,87 @@
+﻿@model Market.Models.RegisterModel
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style type="text/css">
+    div.title
+    {
+        border-bottom: 1px solid #307700;
+    }
+
+        div.title h4
+        {
+            font-family: Century Gothic;
+            font-weight: normal;
+            font-style: italic;
+            letter-spacing: 2px;
+            margin-left: 5%;
+            color: #307700;
+        }
+</style>
+
+<div id="form_wrapper" class="form_wrapper">
+    <div class="login">
+        <div id="title">
+            <h3>@ViewBag.Title</h3>
+        </div>
+        <div class="title">
+            <h4>Аккаунт</h4>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            <div class="row">
+                <label for="UserName">Логин:</label>
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+            <div class="row">
+                <label for="Password">Пароль:</label>
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div class="row">
+                <label for="ConfirmPassword">Повторите пароль:</label>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </div>
+            
+            <div class="title">
+                <h4>Перснональная информация</h4>
+            </div>
+            
+            <div class="row">
+                @Html.LabelFor(m => m.FirstName)
+                @Html.TextBoxFor(m => m.FirstName)
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.MiddleName)
+                @Html.TextBoxFor(m => m.MiddleName)
+                @Html.ValidationMessageFor(m => m.MiddleName)
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.LastName)
+                @Html.TextBoxFor(m => m.LastName)
+                @Html.ValidationMessageFor(m => m.LastName)
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.PhoneNumber)
+                @Html.TextBoxFor(m => m.PhoneNumber)
+                @Html.ValidationMessageFor(m => m.PhoneNumber)
+            </div>
+            <div class="bottom">
+                <input type="submit" value="Регистрация" class="button" />
+            </div>
+        }
+    </div>
+</div>

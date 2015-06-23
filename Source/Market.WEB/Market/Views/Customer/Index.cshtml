@@ -1,0 +1,67 @@
+﻿@model  Market.Model.Entities.Customer
+
+@{
+    ViewBag.Title = "Персональная инФормация";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!-- menu + shopping_cart -->
+@Html.Partial("_SideMenu", Model)
+
+<!-- account information block-->
+<div class="content_wrapper" style="width: 50%; margin-left: 15%;">
+    @using (Html.BeginForm("Index", "Customer", FormMethod.Post))
+    {
+        <div id="title" style="text-align: center;">
+            <h3>Персональная информация</h3>
+        </div>
+        <div style="border-bottom: 1px solid; position: relative; float: left; width: 100%;">
+            <!-- personal info -->
+            @Html.HiddenFor(m => m.IDString)
+            <div class="column">
+                <div class="row">
+                    <label>Имя:</label>
+                    @Html.TextBoxFor(m => m.FirstName)
+                    @Html.ValidationMessageFor(m => m.FirstName)
+                </div>
+                <div class="row">
+                    <label>Отчество:</label>
+                    @Html.TextBoxFor(m => m.MiddaleName)
+                    @Html.ValidationMessageFor(m => m.MiddaleName)
+                </div>
+                <div class="row">
+                    <label>Фамилия:</label>
+                    @Html.TextBoxFor(m => m.LastName)
+                    @Html.ValidationMessageFor(m => m.LastName)
+                </div>
+                <div class="row">
+                    <label>Email:</label>
+                    @Html.TextBoxFor(m => m.Email)
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+                <div class="row">
+                    <label>Номер телефона:</label>
+                    @Html.TextBoxFor(m => m.PhoneNumber)
+                    @Html.ValidationMessageFor(m => m.PhoneNumber)
+                </div>
+            </div>
+            <!-- account info -->
+            <div class="column">
+                <div class="row">
+                    <label>Логин:</label>
+                    @Html.TextBoxFor(m => m.Login)
+                    @Html.ValidationMessageFor(m => m.Login)
+                </div>
+                <div class="row">
+                    <label>Пароль:</label>
+                    @Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+            </div>
+        </div>
+        <!-- button save -->
+        <div class="bottom">
+            <input class="button" type="submit" value="Сохранить" />
+        </div>
+    }
+</div>

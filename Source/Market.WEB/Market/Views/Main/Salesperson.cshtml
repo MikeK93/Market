@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Продавецу";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style type="text/css">
+    div#dealer-corner
+    {
+        width: 980px;
+        margin-left: 1%;
+    }
+
+        div#dealer-corner img
+        {
+            width: 330px;
+            margin-left: 29%;
+        }
+
+        div#dealer-corner div#dealer-content
+        {
+            line-height: 27px;
+            font-family: Century Gothic;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+            div#dealer-corner div#dealer-content p
+            {
+                width: 50%;
+                float: left;
+            }
+
+            div#dealer-corner div#dealer-content div#download-section
+            {
+                text-align: center;
+            }
+
+            div#dealer-corner div#dealer-content img
+            {
+                width: 126px;
+                float: left;
+                margin-left: 14%;
+            }
+
+            div#dealer-corner div#dealer-content a
+            {
+                float: left;
+                margin-left: 6%;
+            }
+</style>
+
+<div id="dealer-corner">
+    @* img *@
+    <img src="~/Content/imgs/main-page/salesperson-icon-pack.jpg" />
+    @* some text + download link *@
+    <div id="dealer-content">
+        <p>
+            Если вы тот кто может взять на себя ответственность продавать товар... Есть возможность загрузить приложение которое позволит Вам воплощить в реальность мечту предпринимательства...
+        </p>
+        <div id="download-section">
+            <img src="~/Content/imgs/download.ico" />
+            <a href="#">Скачать программу сдесь.</a>
+        </div>
+    </div>
+</div>

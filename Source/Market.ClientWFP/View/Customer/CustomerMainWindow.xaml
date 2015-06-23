@@ -1,0 +1,428 @@
+﻿<Window x:Class="Market.ClientWPF.View.Customer.CustomerMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="453.222" Width="572.778">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0">
+            <TabControl.Items>
+                <TabItem Name="Information">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="35" Source="D:/Files/Studying/Лабораторки/EXAMPLES/EpamClasses/session5 (WPF)/Market/CustomerWindows/CustomerWindows/Images/2.ico"/>
+                            <TextBlock Text="Информация" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" VerticalAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <!--<RowDefinition Height="*"/>-->
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="100" MaxWidth="158"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Italic" HorizontalAlignment="Left" Text="Information" FontWeight="SemiBold"/>
+
+                                        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="First Name:"></TextBlock>
+                                        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Middle Name:"></TextBlock>
+                                        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Last Name:"></TextBlock>
+                                        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Age:"></TextBlock>
+                                        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Email:"></TextBlock>
+                                        <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Phone number:"></TextBlock>
+                                        <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Gender:"></TextBlock>
+
+                                        <TextBox Grid.Row="1" Grid.Column="1" Margin="2,4,0,4" Name="txtFN"/>
+                                        <TextBox Grid.Row="2" Grid.Column="1" Margin="2,4,0,4" Name="txtMN"/>
+                                        <TextBox Grid.Row="3" Grid.Column="1" Margin="2,4,0,4" Name="txtLN"/>
+                                        <TextBox Grid.Row="4" Grid.Column="1" Width="35" MaxWidth="40" HorizontalAlignment="Left" Margin="2,4,0,4" Name="txtAge"/>
+                                        <TextBox Grid.Row="5" Grid.Column="1" Margin="2,4,0,4" Name="txtEmail"/>
+                                        <TextBox Grid.Row="6" Grid.Column="1" Margin="2,4,0,4" Name="txtPnumber"/>
+                                        <ComboBox Grid.Row="7" Grid.Column="1" Margin="2,4,0,4" Name="cbGender">
+                                            <ComboBoxItem>Male</ComboBoxItem>
+                                            <ComboBoxItem>Female</ComboBoxItem>
+                                        </ComboBox>
+
+                                        <TextBlock Grid.Row="8" Grid.ColumnSpan="2" FontStyle="Italic" HorizontalAlignment="Left" Text="Profile" FontWeight="SemiBold"/>
+                                        <TextBlock Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Login:"/>
+                                        <TextBlock Grid.Row="10" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Password:"/>
+                                        <TextBlock Grid.Row="11" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Comfirm password:"/>
+
+                                        <TextBox Grid.Row="9" Grid.Column="1" Margin="2,4,0,4" Name="txtLogin"/>
+                                        <TextBox Grid.Row="10" Grid.Column="1" Margin="2,4,0,4" Name="txtPWD"/>
+                                        <TextBox Grid.Row="11" Grid.Column="1" Margin="2,4,0,4" Name="txtComfirmPWD"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <Button Grid.Row="1" 
+                                Name="Save" 
+                                Content="Save"
+                                Margin="2" MinWidth="40"
+                                HorizontalAlignment="Right"/>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="Market">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="35" Source="D:/Files/Studying/Лабораторки/EXAMPLES/EpamClasses/session5 (WPF)/Market/CustomerWindows/CustomerWindows/Images/1.ico"/>
+                            <TextBlock Text="Маркет" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border BorderThickness="0,0,0,4" Padding="0,0,0,4" BorderBrush="Gainsboro">
+                            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                                <TextBlock Text="View:" Margin="0,2,8,2"/>
+                                <ComboBox  Name="cbViews" MinWidth="100" Foreground="Black" RenderTransformOrigin="0.5,0.5">
+                                    <ComboBox.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="Black" Offset="0"/>
+                                            <GradientStop Color="#FFCCDBE2"/>
+                                            <GradientStop Color="#FFCCCFE4" Offset="0.996"/>
+                                            <GradientStop Color="#FFCED4DE" Offset="0.518"/>
+                                        </LinearGradientBrush>
+                                    </ComboBox.BorderBrush>
+                                    <ComboBox.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" SpreadMethod="Repeat">
+                                            <LinearGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="-1" ScaleX="-1"/>
+                                                    <SkewTransform AngleY="0" AngleX="23" CenterY="0.5" CenterX="0.5"/>
+                                                    <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </LinearGradientBrush.RelativeTransform>
+                                            <GradientStop Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                                            <GradientStop Color="#FFEBEBEB" Offset="1"/>
+                                            <GradientStop Color="#FFF1F1F1"/>
+                                            <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                                            <GradientStop Color="#FFDDDDDD" Offset="1"/>
+                                            <GradientStop Color="White" Offset="0.992"/>
+                                            <GradientStop Color="#FFC6C9D1" Offset="0.506"/>
+                                        </LinearGradientBrush>
+                                    </ComboBox.Background>
+                                    <ComboBoxItem>Virtual Map</ComboBoxItem>
+                                    <ComboBoxItem>List of all</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                        </Border>
+                        <Grid Name="grdVirtualMapView" Visibility="Visible"  Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ListView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="lvAllSpots"/>
+
+                            <!--Details-->
+                            <GroupBox Grid.Row="1" Grid.Column="0" BorderThickness="2">
+                                <GroupBox.Header>
+                                    <TextBlock FontStyle="Italic" FontSize="14" Text="Детали"/>
+                                </GroupBox.Header>
+                                <Grid Grid.Row="1" Grid.Column="0" Margin="4 4">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--Labels-->
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,4,4,0" HorizontalAlignment="Right" Text="Номер:" />
+                                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,4,4,0" HorizontalAlignment="Right" Text="Дата начала работы:"/>
+                                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,4,4,0" HorizontalAlignment="Right" Text="Продавец:"/>
+                                    <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,4,4,0" HorizontalAlignment="Right" Text="Адресс:"/>
+                                    <!--TextBoxes-->
+                                    <TextBox Grid.Row="1" Grid.Column="1" MinWidth="50" MaxWidth="50" HorizontalAlignment="Left" IsReadOnly="True" Margin="0,4,4,4" Name="txtSpotNumber" Text="12"/>
+                                    <DatePicker Grid.Row="2" Grid.Column="1" MinWidth="50" MaxWidth="120" IsEnabled="False" Margin="0,4,4,4" Name="dtpStart" />
+                                    <TextBox Grid.Row="3" Grid.Column="1"  MaxWidth="200" Margin="0,4,4,4" IsReadOnly="True" Text="Kozlov Mikhail" Name="txtSpotSalesperson"/>
+                                    <TextBox Grid.Row="4" Grid.Column="1" MaxWidth="200" Margin="0,4,4,4" IsReadOnly="True" Text="Kyiv, Unknown str." Name="txtAddress"/>
+                                </Grid>
+                            </GroupBox>
+                            <!--Merchendise-->
+                            <GroupBox Grid.Row="1" Grid.Column="1" BorderThickness="2">
+                                <GroupBox.Header>
+                                    <TextBlock  Grid.Row="0" Grid.Column="0" Text="Товары" FontStyle="Italic" FontSize="14"/>
+                                </GroupBox.Header>
+                                <Grid Margin="4 4">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ListView Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" MinWidth="120" MaxWidth="200" Name="lvSpotMerchandise"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="4,4,0,4" Text="Цена:"/>
+                                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="4,4,0,4" Text="Теги:"/>
+
+                                    <TextBox Grid.Row="1" Grid.Column="2" Width="40" MaxWidth="120" HorizontalAlignment="Left" IsReadOnly="True" Margin="4,4,0,4"  Name="txtSpotMerchanidseCost"/>
+                                    <TextBox Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Width="60" MaxWidth="120" IsReadOnly="True" HorizontalAlignment="Left" Margin="4,4,0,4" Name="txtSpotMerchanidseTags"/>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="3">
+                                        <Button Name="btnAdd" Margin="0 4 4 4" Padding="4 2">Добавить</Button>
+                                        <Button Name="btnManage" Margin="0 4 4 4" Padding="4 2">Управлять</Button>
+                                    </StackPanel>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                        <Grid Name="grdListAllView" Visibility="Hidden" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" MinWidth="300"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Expander Grid.ColumnSpan="2" Background="Beige">
+                                <Expander.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Фильтры"/>
+                                    </StackPanel>
+                                </Expander.Header>
+                                <Grid>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                                        <TextBlock Margin="0,6,8,6" Text="Теги:"/>
+                                        <ComboBox Margin="0,4,12,4" MinWidth="100" Name="cbFilterTags"/>
+                                        <TextBlock Margin="0,6,8,6" Text="Цена:"/>
+                                        <ComboBox Margin="0,4,12,4" MinWidth="100" Name="cbFilterPrice"/>
+                                    </StackPanel>
+                                    <Button Grid.Column="1" Margin="8,4,8,4" MinWidth="60" HorizontalAlignment="Right" Name="btnSubmitFilters">Искать</Button>
+                                </Grid>
+                            </Expander>
+                            <TreeView Grid.Row="1" Grid.Column="0" Margin="4" Name="tvMerchandise"/>
+                            <GroupBox Grid.Row="1" Grid.Column="1" BorderThickness="2,2,2,2" BorderBrush="Gainsboro" Header="Детали">
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="1" VerticalAlignment="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="4,12,8,12" HorizontalAlignment="Right" Text="Название:"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Margin="4,12,8,12" HorizontalAlignment="Right" Text="Цена:"/>
+                                        <TextBlock Grid.Row="3" Grid.Column="0" Margin="4,12,8,12" HorizontalAlignment="Right" Text="Номер места:"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="2" Margin="4,12,8,12" HorizontalAlignment="Right" Text="Теги:"/>
+                                        <TextBox Grid.Row="1" Grid.Column="1" Margin="2,8,2,8" IsReadOnly="True" MaxWidth="120" Name="txtMName"/>
+                                        <TextBox Grid.Row="2" Grid.Column="1" MinWidth="40" MaxWidth="50" Margin="2,8,2,8" IsReadOnly="True" Name="txtMCost"/>
+                                        <TextBox Grid.Row="3" Grid.Column="1" Margin="2,8,2,8" IsReadOnly="True" MaxWidth="120" Name="txtMSNumber"/>
+                                        <TextBox Grid.Row="1" Grid.RowSpan="4" Grid.Column="4" Margin="2,8,4,8" IsReadOnly="True" MaxWidth="120" Name="txtMTags"/>
+                                    </Grid>
+                                    <GroupBox Grid.Row="3" BorderThickness="2,2,2,2" BorderBrush="Gainsboro" Margin="2" FontStyle="Italic" Header="Продавец">
+                                        <Grid VerticalAlignment="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Row="1" Grid.Column="0" Margin="4,12,8,12" HorizontalAlignment="Right" Text="Имя:"/>
+                                            <TextBlock Grid.Row="2" Grid.Column="0" Margin="4,12,8,12" HorizontalAlignment="Right" Text="Отчество:"/>
+                                            <TextBlock Grid.Row="3" Grid.Column="0" Margin="4,12,8,12" HorizontalAlignment="Right" Text="Фамилия:"/>
+                                            <TextBlock Grid.Row="1" Grid.Column="2" Margin="4,12,8,12" HorizontalAlignment="Right" Text="Email:"/>
+                                            <TextBlock Grid.Row="2" Grid.Column="2" Margin="4,12,8,12" HorizontalAlignment="Right" Text="Номер телефона:"/>
+                                            <TextBox Grid.Row="1" Grid.Column="1" Margin="2,8,2,8" IsReadOnly="True" MaxWidth="120" Name="txtMSFN"/>
+                                            <TextBox Grid.Row="2" Grid.Column="1" Margin="2,8,2,8" IsReadOnly="True" MaxWidth="120"  Name="txtMSMN"/>
+                                            <TextBox Grid.Row="3" Grid.Column="1" Margin="2,8,2,8" IsReadOnly="True" MaxWidth="120" Name="txtMSLN"/>
+                                            <TextBox Grid.Row="1" Grid.Column="4" Margin="2,8,2,8" IsReadOnly="True" MaxWidth="120" Name="txtMSE"/>
+                                            <TextBox Grid.Row="2" Grid.Column="4" Margin="2,8,2,8" IsReadOnly="True" MaxWidth="120" Name="txtMSPN"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <Button Margin="4,2,4,2" Padding="4,2,4,2" Name="btnAddRef">Добавить</Button>
+                                        <Button Margin="4,2,4,2" Padding="4,2,4,2" Name="btnManageRef">Управлять</Button>
+                                    </StackPanel>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="SelectedItems">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="35" Source="D:/Files/Studying/Лабораторки/EXAMPLES/EpamClasses/session5 (WPF)/Market/CustomerWindows/CustomerWindows/Images/3.ico"/>
+                            <TextBlock Text="Корзина" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <GroupBox Grid.Row="0" BorderBrush="Gainsboro" BorderThickness="2">
+                            <GroupBox.Header>
+                                <TextBlock FontStyle="Italic" FontWeight="SemiBold" Text="Выбраный товар"/>
+                            </GroupBox.Header>
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <ListView Grid.Row="0" Margin="4" Name="lvMyMerchandise"></ListView>
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Сортировать товар по:" Margin="2,4,8,4"/>
+                                    <ComboBox Name="cbSortMyMerchandise">
+                                        <ComboBoxItem Content="Цене (по убыванию)"/>
+                                        <ComboBoxItem Content="Цене (по возрастанию)"/>
+                                        <ComboBoxItem Content="Имени (Алфавитный порядок)"/>
+                                    </ComboBox>
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Grid.Column="1" Margin="4">
+                            <GroupBox.Header>
+                                <TextBlock FontStyle="Italic" Text="Детали"/>
+                            </GroupBox.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="2*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="1" VerticalAlignment="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="4,8,12,8" HorizontalAlignment="Right"  Text="Название:"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="4,8,12,8" HorizontalAlignment="Right"  Text="Цена:"/>
+                                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="4,8,12,8" HorizontalAlignment="Right"  Text="Теги:"/>
+                                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="4,8,12,8" HorizontalAlignment="Right" Text="Номер места:"/>
+                                    <TextBox Grid.Row="0" Grid.Column="1" IsReadOnly="True" MaxWidth="200" Margin="0,4,12,4" Name="txtSelectedMName"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" MaxWidth="200" Margin="0,4,12,4" Name="txtSelectedMCost"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" MaxWidth="200" Margin="0,4,12,4" Name="txtSelectedMTags"/>
+                                    <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" MaxWidth="200" Margin="0,4,12,4" Name="txtSelectedMSpot"/>
+                                </Grid>
+                                <GroupBox Grid.Row="3" BorderBrush="Gainsboro" BorderThickness="2" VerticalAlignment="Center">
+                                    <GroupBox.Header>
+                                        <TextBlock FontStyle="Italic" Text="Продавец"/>
+                                    </GroupBox.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="4,8,12,8" HorizontalAlignment="Right" Text="Имя:"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="4,8,12,8" HorizontalAlignment="Right" Text="Отчество:"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Margin="4,8,12,8" HorizontalAlignment="Right" Text="Фамилия:"/>
+                                        <TextBlock Grid.Row="3" Grid.Column="0" Margin="4,8,12,8" HorizontalAlignment="Right" Text="Номер телефона:"/>
+                                        <TextBlock Grid.Row="4" Grid.Column="0" Margin="4,8,12,8" HorizontalAlignment="Right" Text="Email:"/>
+                                        <TextBox Grid.Row="0" Grid.Column="1" MaxWidth="200" IsReadOnly="True" Margin="0,4,12,4" Name="txtSFN"/>
+                                        <TextBox Grid.Row="1" Grid.Column="1" MaxWidth="200" IsReadOnly="True" Margin="0,4,12,4" Name="txtSMN"/>
+                                        <TextBox Grid.Row="2" Grid.Column="1" MaxWidth="200" IsReadOnly="True" Margin="0,4,12,4" Name="txtSLN"/>
+                                        <TextBox Grid.Row="3" Grid.Column="1" MaxWidth="200" IsReadOnly="True" Margin="0,4,12,4" Name="txtSPN"/>
+                                        <TextBox Grid.Row="4" Grid.Column="1" MaxWidth="200" IsReadOnly="True" Margin="0,4,12,4" Name="txtSE"/>
+                                    </Grid>
+                                </GroupBox>
+                            </Grid>
+                        </GroupBox>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0">
+                                <Button Margin="4,4,4,8" Padding="3" Content="Добавить новый" Name="btnAddReference"/>
+                                <Button Margin="4,4,4,8" Padding="2" Content="Удалить" Name="btnRemove"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="2">
+                                <Button Margin="4,4,4,8" Padding="4" Content="Подтвердить заказ" Name="btnSubmitOrder"/>
+                                <Button Margin="4,4,4,8" Padding="4" Content="Сохранить" Name="btnSaveSelection"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+            </TabControl.Items>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,47 @@
+﻿@model List<Market.Model.Entities.SDM>
+<script type="text/javascript">
+    // Adding new sdm
+    function add(sender) {
+        var merchId = $(sender).closest("div.merch-item").attr("id");
+        console.log("try add sdm with id: " + merchId);
+        var customerId = $("li#menuitem_index").children().first().attr("href").split("=")[1];
+        $.ajax({
+            url: '@Url.Action("AddMerchandise")',
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ cId: customerId, sdmId: merchId }),
+            datatype: "json",
+            success: function (data) { successAjax(data, merchId); },
+            error: function () { alert("error while adding new merchandise :'("); }
+        });
+    }
+
+    function successAjax(data, merchId) {
+        if (data["added"] == true) {
+            console.log("added animation");
+            $(".selected-items-count").text(data["count"]);
+            $("div#" + merchId)
+                .switchClass("merch-item", "item-added", 1000)
+                .switchClass("item-added", "merch-item", 1000);
+        } else {
+            console.log("not added animation");
+            $("div#" + merchId)
+                .switchClass("merch-item", "item-not-added", 1000)
+                .switchClass("item-not-added", "merch-item", 1000);
+        }
+    }
+</script>
+
+<div id="merch-list">
+    @foreach (var sdm in Model)
+    {
+        var icon = "/Content/imgs/merchandise/" + sdm.Merchendise.Categories.First().Name.ToLower() + ".png";
+        <div id='@sdm.ID' class="merch-item">
+            <img src='@icon' class="merch-icon" />
+            <h2>@sdm.Merchendise.Name</h2>
+            <h4>@sdm.Merchendise.Tags</h4>
+            <h1>@sdm.Cost грн.</h1>
+            <img src="~/Content/imgs/cart-add-icon.png" class="merch-add" onclick="add(this);" />
+        </div>
+    }
+</div>

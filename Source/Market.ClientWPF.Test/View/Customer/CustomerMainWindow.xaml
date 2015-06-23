@@ -1,0 +1,497 @@
+﻿<Window x:Class="Market.ClientWPF.View.Customer.CustomerMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="480.088" Width="572.778"
+        Closing="Window_Closing">
+    <Grid Margin="8">
+
+        <TabControl Height="auto" Width="auto">
+            <TabControl.Items>
+                <TabItem Name="Information">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="35" Source="D:/Files/Studying/Лабораторки/EXAMPLES/EpamClasses/session5 (WPF)/Market/CustomerWindows/CustomerWindows/Images/2.ico"/>
+                            <TextBlock Text="Информация" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Expander Grid.Row="0"
+                                          BorderThickness="1"
+                                          Margin="10,5,10,10">
+                                    <Expander.Header>
+                                        <TextBlock Text="Персональная информация" FontSize="10" FontStyle="Italic"/>
+                                    </Expander.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Имя:"></TextBlock>
+                                        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Отчество:"></TextBlock>
+                                        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Фамилия:"></TextBlock>
+                                        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Возраст:"></TextBlock>
+                                        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Email:"></TextBlock>
+                                        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Номер телефона:"></TextBlock>
+                                        <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Gender:"></TextBlock>
+
+                                        <TextBox Grid.Row="0" Grid.Column="1" Margin="2,4,0,4" Text="{Binding FirstName}"/>
+                                        <TextBox Grid.Row="1" Grid.Column="1" Margin="2,4,0,4" Text="{Binding MiddleName}"/>
+                                        <TextBox Grid.Row="2" Grid.Column="1" Margin="2,4,0,4" Text="{Binding LastName}"/>
+                                        <TextBox Grid.Row="3" Grid.Column="1" Width="35" MaxWidth="40" HorizontalAlignment="Left" Margin="2,4,0,4"
+                                                  Text="{Binding Age}"/>
+                                        <TextBox Grid.Row="4" Grid.Column="1" Margin="2,4,0,4" Text="{Binding Email}"/>
+                                        <TextBox Grid.Row="5" Grid.Column="1" Margin="2,4,0,4" Text="{Binding PhoneNumber}"/>
+                                        <ComboBox Grid.Row="6" Grid.Column="1" Margin="2,4,0,4"
+                                                  ItemsSource="{Binding Genders}"
+                                                  SelectedItem="{Binding SelectedGender}"/>
+                                    </Grid>
+                                </Expander>
+
+                                <Expander Grid.Row="1"
+                                          BorderThickness="1"
+                                          Margin="10,4">
+                                    <Expander.Header>
+                                        <TextBlock Text="Аккаунт" FontSize="10" FontStyle="Italic"/>
+                                    </Expander.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Login:"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Password:"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Comfirm password:"/>
+
+                                        <TextBox Grid.Row="0" Grid.Column="1" Margin="2,4,0,4" Text="{Binding NewLogin}"/>
+                                        <TextBox Grid.Row="1" Grid.Column="1" Margin="2,4,0,4" Text="{Binding NewPWord}"/>
+                                        <TextBox Grid.Row="2" Grid.Column="1" Margin="2,4,0,4" Text="{Binding NewPWordComfirm}"/>
+                                    </Grid>
+                                </Expander>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2">
+                            <Button 
+                                Content="Сохранить"
+                                Command="{Binding SavePersonalInformationCommand}"
+                                Margin="10,5"
+                                Padding="5,2"
+                                HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="Market">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="35" Source="D:/Files/Studying/Лабораторки/EXAMPLES/EpamClasses/session5 (WPF)/Market/CustomerWindows/CustomerWindows/Images/1.ico"/>
+                            <TextBlock Text="Маркет" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border BorderThickness="0,0,0,4" Padding="0,0,0,4" BorderBrush="Gainsboro">
+                            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                                <TextBlock Text="View:" Margin="0,2,8,2"/>
+                                <ComboBox MinWidth="100" Foreground="Black" 
+                                          ItemsSource="{Binding Views}"
+                                          SelectedItem="{Binding SelectedView}"/>
+                                <Button Margin="15,2,8,2" Content="Принять"
+                                        Command="{Binding AcceptViewCommand}"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Grid Name="grdVirtualMapView" Visibility="Hidden"  Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <ListView Grid.Row="0"
+                                      ItemsSource="{Binding AllSpots}"
+                                      SelectedItem="{Binding SelectedSpot}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid ToolTip="Нажмите чтобы показать список товаров.">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Width="40" Height="40" Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\spot.ico"/>
+                                            <StackPanel Grid.Column="1" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                                <TextBlock Text="{Binding Number, StringFormat=№ {0}}" Padding="4,6"/>
+                                                <TextBlock Text="{Binding DateStart, StringFormat=(Работает с {0})}" Padding="4,6"
+                                                       FontSize="10" FontStyle="Italic"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <GroupBox Grid.Row="1">
+                                <GroupBox.Header>
+                                    <TextBlock Text="Товары" FontStyle="Italic" FontSize="14"/>
+                                </GroupBox.Header>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ListBox Grid.Column="0" 
+                                             ItemsSource="{Binding SpotSDM}"
+                                             SelectedItem="{Binding SelectedSDM}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Width="20" Height="20" Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\merchandise.ico"/>
+                                                    <TextBlock Text="{Binding MerchandiseName}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0"
+                                                 Text="Цена:" Margin="4,8"/>
+                                        <TextBlock Grid.Row="0" Grid.Column="1" Margin="4,8"
+                                                 Text="{Binding SelectedMerchandiseCost, StringFormat={}{0} (грн.)}"
+                                                 MinWidth="50" MaxWidth="100" HorizontalAlignment="Left"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="0"
+                                                 Text="Теги:" Margin="4,8"/>
+                                        <TextBox Grid.Row="1" Grid.Column="1" Margin="4,8"
+                                                 Text="{Binding SelectedMerchandiseTags}" IsReadOnly="True"
+                                                 MaxWidth="150" TextWrapping="WrapWithOverflow"/>
+                                        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Right"
+                                                    Orientation="Horizontal">
+                                            <Button Content="Добавить" Margin="10,5" Padding="8,4"
+                                                Command="{Binding AddMerchandiseCommand}"/>
+                                            <Button Content="Управлять" Margin="10,5" Padding="8,4"
+                                                Command="{Binding ManageSelecectionsCommand}"/>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Expander Grid.Column="2" ExpandDirection="Right" FlowDirection="LeftToRight">
+                                        <Expander.Header>
+                                            <TextBlock Text="Детали">
+                                                <TextBlock.LayoutTransform>
+                                                    <RotateTransform Angle="90"/>
+                                                </TextBlock.LayoutTransform>
+                                            </TextBlock>
+                                        </Expander.Header>
+                                        <GroupBox>
+                                            <GroupBox.Header>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Width="20" Height="20" Source="{Binding SelectedSpotSalespersonGenderIcon}"/>
+                                                    <TextBlock Text="Продавец"
+                                                               Margin="4,8" FontSize="11" FontStyle="Italic"/>
+                                                </StackPanel>
+                                            </GroupBox.Header>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <TextBlock Text="Инициалы:"
+                                                       Grid.Row="0" Grid.Column="0" 
+                                                       Margin="4,8"/>
+                                                <TextBox Grid.Row="0" Grid.Column="1" Margin="4,8"
+                                                 Text="{Binding SelectedMerchandiseSalesperson}" IsReadOnly="True"
+                                                 MaxWidth="150"/>
+                                                <TextBlock Text="Email:"
+                                                       Grid.Row="1" Grid.Column="0"
+                                                       Margin="4,8"/>
+                                                <TextBox Grid.Row="1" Grid.Column="1" Margin="4,8"
+                                                 Text="{Binding SelectedMerchandiseSalespersonEmail}" IsReadOnly="True"
+                                                 MaxWidth="150"/>
+                                            </Grid>
+                                        </GroupBox>
+                                    </Expander>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <Grid Name="grdListAllView" Visibility="Visible" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <!-- Фильтры -->
+                            <Expander Grid.Row="0" Grid.ColumnSpan="2">
+                                <Expander.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Фильтры" FontSize="11" FontStyle="Italic"/>
+                                    </StackPanel>
+                                </Expander.Header>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                        <TextBlock Margin="0,6,8,6" Text="Теги:"/>
+                                        <ComboBox Margin="0,4,12,4" MinWidth="100"
+                                                  ItemsSource="{Binding AllTags}"
+                                                  SelectedItem="{Binding SelectedTag}"/>
+                                        <TextBlock Margin="0,6,8,6" Text="Цена:"/>
+                                        <ComboBox Margin="0,4,12,4" MinWidth="100"
+                                                  ItemsSource="{Binding SortTypes}"
+                                                  SelectedItem="{Binding SelectedSortType}"/>
+                                    </StackPanel>
+                                    <Button Content="Искать"
+                                            Grid.Column="1" Margin="8,4" Padding="10,2" HorizontalAlignment="Right"
+                                            Command="{Binding FilterSpotSDMCommand}"/>
+                                </Grid>
+                            </Expander>
+                            <!-- Список товаров -->
+                            <ListView Grid.Row="1" Margin="4"
+                                          ItemsSource="{Binding FilteredSpotSDM}"
+                                          SelectedItem="{Binding Path=SelectedSpotSDM}">
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0"
+                                                   Width="32" Height="32"
+                                                   VerticalAlignment="Center"
+                                                   Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\merchandise.ico"/>
+                                            <StackPanel Grid.Column="1" Margin="4,4">
+                                                <TextBlock Text="{Binding MerchandiseName}" FontSize="12"/>
+                                                <TextBlock Text="{Binding MerchandiseSpot, StringFormat=Бокс №{0}}"
+                                                           FontSize="11" FontStyle="Italic"/>
+                                                <TextBlock Text="{Binding MerchandiseTags}"
+                                                           FontSize="10" FontStyle="Italic"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <!-- Список продавцов для выбранного товара -->
+                            <ListView Grid.Row="2" Margin="4"
+                                      ItemsSource="{Binding SelectedSpotSDM.CurrentMerchandiseAllSMDs}"
+                                      SelectedItem="{Binding SelectedSDM}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Grid.Column="0"
+                                                   Width="25" Height="25"
+                                                   VerticalAlignment="Center"
+                                                   Source="{Binding GenderIcon}"/>
+                                            <Grid Grid.Column="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                </Grid.RowDefinitions>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Margin="4,2"
+                                                               Text="{Binding SalespersonFLNames}"
+                                                               FontSize="11"/>
+                                                    <TextBlock Margin="4,2"
+                                                               Text="{Binding MerchandiseCost, StringFormat=({0} грн.)}"
+                                                               FontSize="11"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <!-- Кнопки Добавить и Управлять -->
+                            <StackPanel Grid.Row="3" 
+                                        Orientation="Horizontal"
+                                        HorizontalAlignment="Right">
+                                <Button Content="Добавить" Margin="10,5" Padding="8,4"
+                                                Command="{Binding AddMerchandiseCommand}"/>
+                                <Button Content="Управлять" Margin="10,5" Padding="8,4"
+                                                Command="{Binding ManageSelecectionsCommand}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="SelectedItems">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="35" Source="D:/Files/Studying/Лабораторки/EXAMPLES/EpamClasses/session5 (WPF)/Market/CustomerWindows/CustomerWindows/Images/3.ico"/>
+                            <TextBlock Text="Корзина" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <!-- Блок для сортировки -->
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="Сортировать:" FontSize="12"
+                                       Margin="10"/>
+                            <ComboBox ItemsSource="{Binding SortTypes}"
+                                      SelectedItem="{Binding SelectedSortType}"
+                                      Margin="5,5"/>
+                            <Button Content="Принять" 
+                                    Margin="10,5"
+                                    Padding="5,3"
+                                    Command="{Binding SortSelectedItemsCommand}"/>
+                        </StackPanel>
+                        <!-- Список выбраных товаров -->
+                        <ListBox Grid.Row="1" 
+                                 ItemsSource="{Binding CSIs}"
+                                 SelectedItem="{Binding SelectedCSI}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="#FFC1C1C1" Margin="5,10,5,3" BorderThickness="1">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <!-- Иконка товара -->
+                                            <Image Grid.Column="0"
+                                               Width="50" Height="50"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\myMerchendise.ico"/>
+                                            <!-- Информация о товаре и т.п. -->
+                                            <Border Grid.Column="1" 
+                                                    BorderThickness="0,0,1,0"
+                                                    BorderBrush="#FFC1C1C1"
+                                                    VerticalAlignment="Center"
+                                                    Margin="10,0">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <!-- Информация о товаре: назв., цена -->
+                                                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                                        <TextBlock Text="{Binding MerchandiseName}" FontSize="12"
+                                                                   Margin="4,2"/>
+                                                        <TextBlock Text="{Binding MerchandiseCost, StringFormat=({0} грн.)}" FontSize="12"
+                                                                   Margin="4,2"/>
+                                                    </StackPanel>
+                                                    <!-- Теги и информация о продавце -->
+                                                    <StackPanel Grid.Row="1">
+                                                        <TextBlock Text="{Binding MerchandiseTags}" 
+                                                                   FontSize="10" FontStyle="Italic" Foreground="Gray"/>
+                                                        <TextBlock Text="{Binding SubmitText}"
+                                                                   Foreground="{Binding SubmitColor}"
+                                                                   FontFamily="Century Gothic" FontSize="12" FontStyle="Italic" 
+                                                                   Margin="4,10"/>
+                                                        <!-- Продавец -->
+                                                        <Expander>
+                                                            <Expander.Header>
+                                                                <StackPanel Orientation="Horizontal">
+                                                                    <Image Width="20" Height="20"
+                                                                       VerticalAlignment="Center"
+                                                                       Source="{Binding SalespersonGenderIcon}"/>
+                                                                    <TextBlock Text="Продавец..." 
+                                                                           FontSize="11" FontStyle="Italic"
+                                                                           VerticalAlignment="Center"/>
+                                                                </StackPanel>
+                                                            </Expander.Header>
+                                                            <GroupBox  BorderBrush="#FFC1C1C1" BorderThickness="1">
+                                                                <StackPanel HorizontalAlignment="Left" OpacityMask="{x:Null}">
+                                                                    <TextBlock Text="{Binding SalespersonFMLNames,StringFormat=Ф.И.О.: {0}}"
+                                                                           FontSize="11"/>
+                                                                    <TextBlock Text="{Binding SalespersonEmail, StringFormat=Email: {0}}"
+                                                                           FontSize="11"/>
+                                                                    <TextBlock Text="{Binding SalespersonPhoneNumber,StringFormat=Тел.номер.: {0}}"
+                                                                           FontSize="11"/>
+                                                                </StackPanel>
+                                                            </GroupBox>
+                                                        </Expander>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </Border>
+                                            <!-- Кнопки Подтвердить(Отказаться), Удалить -->
+                                            <StackPanel Grid.Column="2" 
+                                                        VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Button Content="{Binding IsSubmitedString}"
+                                                        Foreground="{Binding SubmitButtonColor}"
+                                                        Command="{Binding SubmitCommand}"
+                                                        Margin="10,5" Padding="5,2"/>
+                                                <Button Content="Удалить"
+                                                        Command="{Binding DeleteCommand}"
+                                                        Foreground="#FFD81E1E"
+                                                        Margin="10,5" Padding="5,2"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                        <!-- Кнопка Coxpaнuть -->
+                        <StackPanel Grid.Row="2" Orientation="Horizontal"
+                                    HorizontalAlignment="Right">
+                            <Button 
+                                Content="Сохранить"
+                                Command="{Binding SavePersonalInformationCommand}"
+                                Margin="10,5"
+                                Padding="5,2"
+                                HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+            </TabControl.Items>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,935 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del,
+dfn, em, font, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, caption, tbody, tfoot
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    list-style: none;
+}
+
+body
+{
+    /* line-height: 1; */
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div .inner
+{
+    width: 25%;
+    margin: 0 auto;
+}
+
+div
+{
+    display: block;
+}
+
+    div#fotter
+    {
+        float: left;
+        top: 720px;
+        height: 106px;
+        width: 980px;
+        bottom: auto;
+        border-top: 1px solid;
+        margin-top: 30px;
+    }
+
+.footer_font
+{
+    font-size: 11px;
+    font-family: 'Century Gothic';
+    font-style: italic;
+    line-height: 15px;
+}
+
+.ItemsContainer /* menu bar font setups */
+{
+    font-family: 'Century Schoolbook'; /* 'Century Gothic' */
+    font-size: 120%;
+}
+
+.CenteredContent
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.InlineContent
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.SITE_ROOT
+{
+    min-height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+#SITE_STRUCTURE /* header & content & footer */
+{
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    height: auto !important;
+}
+
+#SITE_HEADER /* menu bar */
+{
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #000;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+body
+{
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+
+/* links  */
+a:link
+{
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    transition: all ease 0.5s;
+}
+
+a:active
+{
+    color: #07b0bb;
+}
+
+a:visited
+{
+    color: #000;
+}
+
+a:hover
+{
+    /*display: inline-block;*/
+    color: #07b0bb;
+}
+
+a:focus
+{
+    color: #0e8c90;
+}
+
+a.AppsLink img
+{
+    cursor: pointer;
+}
+
+/* end links*/
+
+/* ----------------------------CONTENT ----------------------------*/
+.content_wrapper
+{
+    float: left;
+    width: 80%;
+    margin-left: 1%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+/*---------------------------- END CONTENT ----------------------------*/
+
+/*----------------------------LOGIN/REGISTRATE----------------------------*/
+.form_wrapper
+{
+    line-height: 50px;
+    margin: 0 auto;
+    width: 350px;
+    font-size: 16px;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+    .form_wrapper .row,
+    .content_wrapper .row
+    {
+        margin-left: 5%;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        line-height: 20px;
+    }
+
+        .form_wrapper .row label,
+        .content_wrapper .row label
+        {
+            font-family: 'Century Gothic';
+            font-style: italic;
+            font-size: 14px;
+            float: left;
+            /* margin-right: 100%; */
+            margin-left: 2%;
+            width: 95%;
+        }
+
+        .form_wrapper .row input[type="text"],
+        .form_wrapper .row input[type="password"],
+        .content_wrapper .row input[type="text"],
+        .content_wrapper .row input[type="password"]
+        {
+            width: 95%;
+            height: 25px;
+            font-size: 16px;
+            font-style: oblique;
+            font-family: Georgia;
+            color: rgba(51, 51, 51, 0.88);
+        }
+
+        .form_wrapper .row select,
+        .content_wrapper .row select
+        {
+            width: 98%;
+            height: 31px;
+            font-size: 16px;
+            font-family: Georgia;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .form_wrapper .row span,
+        .content_wrapper .row span
+        {
+            /*visibility: hidden;*/
+            color: red;
+            font-size: 11px;
+            font-style: italic;
+            display: block;
+        }
+
+    .form_wrapper .forgot_linkform
+    {
+        font-family: Bookman Old Style;
+        font-size: 11px;
+        color: #ababab;
+        margin-left: 50%;
+    }
+
+    .form_wrapper .links_forgot_password
+    {
+        margin-top: -5%;
+        text-align: center;
+    }
+
+a.forgot_linkform:hover
+{
+    transition: color 0.4s ease 0s;
+    color: #499317;
+}
+
+#title
+{
+    border-bottom: 1px solid;
+    letter-spacing: 2px;
+}
+
+.register
+{
+}
+
+.column
+{
+    float: left;
+    width: 50%;
+}
+
+div #title h3
+{
+    font-size: 25px;
+    font-family: 'Century Gothic';
+    font-style: italic;
+    font-weight: normal;
+    margin-left: 5%;
+}
+
+.form_wrapper .bottom
+{
+    width: 100%;
+    border-top: 1px solid;
+}
+
+    .form_wrapper .bottom div#bottom
+    {
+        margin-left: 2%;
+        font-family: Bookman Old Style;
+        font-size: 11px;
+        font-style: italic;
+        color: #ababab;
+        width: 40%;
+        margin-top: -3%;
+    }
+
+.form_wrapper #bottom input[type="checkbox"]
+{
+    margin-top: 15px;
+}
+
+
+.button
+{
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #2ecc71;
+    border: 0;
+    border-bottom: 2px solid #28be68;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 -2px #28be68;
+    box-shadow: inset 0 -2px #28be68;
+}
+
+    .button:active
+    {
+        top: 1px;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+
+.delete_selectedItem_button
+{
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #c0392b;
+    border: 0;
+    border-bottom: 2px solid #b53224;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 -2px #b53224;
+    box-shadow: inset 0 -2px #b53224;
+}
+
+    .delete_selectedItem_button:active
+    {
+        top: 1px;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+.links
+{
+    font-family: 'Bookman Old Style';
+    font-size: 10px;
+    font-style: italic;
+}
+
+    .links:hover
+    {
+        color: #28be68;
+    }
+
+/*----------------------------END LOGIN/REGISTRATE----------------------------*/
+
+
+/*----------------------------MENU----------------------------*/
+.side_menu
+{
+    text-align: center;
+    display: block;
+    margin-left: 5%;
+    padding: 15px 4px 17px 0;
+    list-style: none;
+    position: relative;
+    /*-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);*/
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+    .side_menu .side_menu_item
+    {
+        font-family: 'Century Schoolbook';
+        font-size: 13px;
+        font-style: italic;
+        padding: 10px 20px;
+        background: #fff;
+        cursor: pointer;
+        border-left: 5px solid #0e8c90;
+        margin-right: -4px;
+        display: inline-block;
+        position: relative;
+    }
+
+        .side_menu .side_menu_item:hover
+        {
+            background: #16a085;
+            color: #fff;
+        }
+
+.navbox
+{
+    position: relative;
+    float: left;
+    height: 270px;
+}
+
+ul.nav
+{
+    list-style: none;
+    display: block;
+    position: relative;
+    width: 200px;
+    top: 50px;
+    left: 30px;
+    /*padding: 60px 0 60px 0;
+    background: url(Content/imgs/shadow.png) no-repeat;
+    -webkit-background-size: 50% 100%;*/
+}
+
+li
+{
+    margin: 5px 0 0 0;
+}
+
+ul.nav li a
+{
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    color: #174867;
+    padding: 7px 15px 7px 15px;
+    width: 100px;
+    display: block;
+    text-decoration: none;
+    /*-webkit-box-shadow: -3px 1px 4px #888;*/
+    font-family: 'Century Gothic';
+    font-size: 12px;
+}
+
+    ul.nav li a:hover
+    {
+        /*background: #ebebeb url(border.png) no-repeat;*/
+        background: #f8f8f8;
+        color: #67a5cd;
+        padding: 7px 15px 7px 30px;
+    }
+/*----------------------------END MENU----------------------------*/
+
+/*--------------------------SHOPPING CART----------------------------*/
+
+
+
+div.cart-title
+{
+    background-color: rgb(26, 188, 156);
+    height: 40px;
+    border-bottom: 8px solid rgb(22, 160, 133);
+    text-align: center;
+}
+
+    div.cart-title h2.title
+    {
+        color: rgb(246, 243, 243);
+        font-family: 'Century Gothic';
+        padding-top: 6px;
+        font-stretch: wider;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 2px;
+    }
+
+li.csi-item
+{
+    border: 2px solid #34495E;
+    padding: 5px 10px;
+}
+
+    li.csi-item div
+    {
+        display: block;
+    }
+
+        li.csi-item div.merchadnise-col
+        {
+            text-align: center;
+            padding-top: 36px;
+            padding-bottom: 25px;
+            width: 180px;
+            float: left;
+        }
+
+            li.csi-item div.merchadnise-col h3
+            {
+                font-family: 'Century Schoolbook';
+                font-size: 16px;
+                color: #8a7b31;
+            }
+
+            li.csi-item div.merchadnise-col h5
+            {
+                font-family: 'Century Gothic';
+                font-size: 12px;
+                color: #ababab;
+                font-style: italic;
+            }
+
+div.salesperson-col
+{
+    font-family: Calibri;
+    font-size: 12px;
+    font-style: oblique;
+    color: #707070;
+    padding: 30px 15px;
+    width: 150px;
+    float: left;
+    padding-right: 0px;
+}
+
+    div.salesperson-col div.salesperon-icon
+    {
+        float: left;
+    }
+
+    div.salesperson-col h4.salesperson-initials
+    {
+    }
+
+li.csi-item div.cost-col
+{
+    font-size: 14px;
+    color: #33652b;
+    padding-top: 40px;
+    width: 215px;
+    text-align: center;
+    float: left;
+}
+
+    li.csi-item div.cost-col h2.merch-cost
+    {
+        font-family: 'Bookman Old Style';
+        font-style: normal;
+    }
+
+div.btns-col div.merch-delete
+{
+    display: block;
+    float: none;
+}
+
+div.btns-col
+{
+    padding-left: 10px;
+    padding-bottom: 20px;
+    padding-top: 15px;
+}
+
+    div.btns-col div input
+    {
+        font-family: 'Century Gothic';
+        font-size: 16px;
+        width: 130px;
+        padding: 6px;
+    }
+
+div.cart-footer
+{
+    background-color: #1ABC9C;
+    height: 40px;
+    border-bottom: 8px solid #16A085;
+    margin-top: 6px;
+}
+
+    div.cart-footer h2
+    {
+        float: left;
+        color: #F6F3F3;
+        font-family: "Century Gothic";
+        padding-top: 6px;
+        font-style: italic;
+        font-weight: 400;
+        margin-left: 10px;
+    }
+
+    div.cart-footer p
+    {
+        color: #fff;
+        font-family: "Century Gothic";
+        font-size: 22px;
+        font-weight: bold;
+        padding-left: 10px;
+        margin-top: 7px;
+        float: left;
+        width: 50%;
+        text-align: right;
+    }
+
+img#continue-shopping
+{
+    cursor: pointer;
+    padding-top: 27px;
+    width: 66px;
+    opacity: 0.8;
+    /*transition: all 0.5s linear;
+    border-radius: 100%;*/
+}
+
+    img#continue-shopping:hover
+    {
+        /*transform: translateY(1px);*/
+        opacity: 1;
+        /*box-shadow: 4px 4px 5px #807e7e;
+        -moz-transition: all 1s;
+        -webkit-transition: all 1s;
+        -o-transition: all 1s;
+        cursor: pointer;*/
+    }
+
+    img#continue-shopping:active
+    {
+        transform: translateY(2px);
+    }
+
+li.shopping-catr img.cart-img:active
+{
+    transform: translateY(2px);
+    /*transform: rotate(20deg);*/
+}
+/*----------------------------DELETE BTN----------------------------*/
+div input.delete-item-btn
+{
+    color: #fff;
+    background-color: #E74C3C;
+    border: none;
+    -webkit-border-radius: 0;
+    -webkit-box-shadow: 0 5px #C0392B;
+    -moz-box-shadow: 0 5px #C0392B;
+    box-shadow: 0 8px #C0392B;
+    line-height: 1.8;
+    vertical-align: bottom;
+    -webkit-appearance: none;
+    display: inline-block;
+    padding: 5px 30px;
+    margin-top: 4px;
+}
+
+    div input.delete-item-btn:hover,
+    div input.delete-item-btn.hover
+    {
+        background-color: #ed3b29;
+    }
+
+    div input.delete-item-btn:active,
+    div input.delete-item-btn.active
+    {
+        background-color: #d33823;
+        -webkit-box-shadow: 0 5px #C0392B;
+        -moz-box-shadow: 0 4px #C0392B;
+        box-shadow: 0 4px #C0392B;
+        -webkit-transform: translateY(4px);
+        -moz-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+        -o-transform: translateY(4px);
+        transform: translateY(4px);
+    }
+/*----------------------------SET-STATE BTN----------------------------*/
+div input.confirmed-btn
+{
+    color: #fff;
+    background-color: #2ECC71;
+    border: none;
+    -webkit-border-radius: 0;
+    -webkit-box-shadow: 0 5px #27AE60;
+    -moz-box-shadow: 0 5px #27AE60;
+    box-shadow: 0 8px #27AE60;
+    line-height: 0.8;
+    vertical-align: bottom;
+    -webkit-appearance: none;
+    display: inline-block;
+    padding: 5px 30px;
+    margin-bottom: 8px;
+}
+
+    div input.confirmed-btn:hover,
+    div input.confirmed-btn.hover
+    {
+        background-color: #2fba69;
+    }
+
+    div input.confirmed-btn:active,
+    div input.confirmed-btn.active
+    {
+        background-color: #2bb565;
+        -webkit-box-shadow: 0 5px #27AE60;
+        -moz-box-shadow: 0 4px #27AE60;
+        box-shadow: 0 4px #27AE60;
+        -webkit-transform: translateY(4px);
+        -moz-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+        -o-transform: translateY(4px);
+        transform: translateY(4px);
+    }
+/*--------------------------------------------*/
+div input.non-confirmed-btn
+{
+    color: #727171;
+    background-color: #ECF0F1;
+    border: none;
+    -webkit-border-radius: 0;
+    -webkit-box-shadow: 0 5px #BDC3C7;
+    -moz-box-shadow: 0 5px #BDC3C7;
+    box-shadow: 0 8px #BDC3C7;
+    line-height: 0.8;
+    vertical-align: bottom;
+    -webkit-appearance: none;
+    display: inline-block;
+    padding: 5px 30px;
+    margin-bottom: 8px;
+}
+
+    div input.non-confirmed-btn:hover,
+    div input.non-confirmed-btn.hover
+    {
+        background-color: #dfe3e4;
+    }
+
+    div input.non-confirmed-btn:active,
+    div input.non-confirmed-btn.active
+    {
+        background-color: #d0d3d4;
+        -webkit-box-shadow: 0 5px #BDC3C7;
+        -moz-box-shadow: 0 4px #BDC3C7;
+        box-shadow: 0 4px #BDC3C7;
+        -webkit-transform: translateY(4px);
+        -moz-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+        -o-transform: translateY(4px);
+        transform: translateY(4px);
+    }
+
+/*----------------------------END SHOPPING CART----------------------------*/
+
+
+/*----------------------------SEARCH BOX----------------------------------*/
+div#search-box
+{
+    padding: 10px;
+    margin-left: 41%;
+}
+
+    div#search-box div.item-to-seek
+    {
+        float: left;
+        margin-right: 11px;
+    }
+
+    div#search-box div.btn-to-proceed-seek
+    {
+        padding-top: 5px;
+        cursor: pointer;
+    }
+
+        div#search-box div.btn-to-proceed-seek:hover
+        {
+            transform: translateY(1px);
+        }
+
+        div#search-box div.btn-to-proceed-seek:active
+        {
+            transform: translateY(3px);
+        }
+/*----------------------------END SEARCH BOX----------------------------------*/
+
+
+/***************** list of merch ******************/
+div#merch-list
+{
+    /*border: 2px solid rgb(209, 209, 209);*/
+}
+
+div.merch-item
+{
+    border: 2px solid #CCC9C9;
+    text-align: center;
+    width: 276px;
+    float: left;
+    margin: 18px;
+    border-radius: 41px;
+}
+
+    div.merch-item div.additional-info,
+    div.item-added div.additional-info,
+    div.item-not-added div.additional-info
+    {
+        display: none;
+        height: 95px;
+        background-color: #F4F4F4;
+        padding: 10px 0px;
+    }
+
+        div.merch-item div.additional-info div.spot,
+        div.item-added div.additional-info div.spot,
+        div.item-not-added div.additional-info div.spot,
+        div.merch-item div.additional-info div.salesperson,
+        div.item-added div.additional-info div.salesperson,
+        div.item-not-added div.additional-info div.salesperson
+        {
+            width: 50%;
+            float: left;
+        }
+
+        div.merch-item div.additional-info img,
+        div.item-added div.additional-info img,
+        div.item-not-added div.additional-info img
+        {
+            width: 36px;
+        }
+
+        div.merch-item div.additional-info h3,
+        div.item-added div.additional-info h3,
+        div.item-not-added div.additional-info h3
+        {
+            font-family: Century Gothic;
+            font-weight: 600;
+            color: #808080;
+        }
+
+        div.merch-item div.additional-info h4,
+        div.item-added div.additional-info h4,
+        div.item-not-added div.additional-info h4
+        {
+            font-size: 10px;
+            font-family: Century Gothic;
+            font-weight: normal;
+            font-style: italic;
+            color: rgb(102, 102, 102);
+        }
+
+    div.merch-item img.merch-icon,
+    div.item-added img.merch-icon,
+    div.item-not-added img.merch-icon
+    {
+        width: 105px;
+    }
+
+    div.merch-item img.merch-add,
+    div.item-added img.merch-add,
+    div.item-not-added img.merch-add
+    {
+        cursor: pointer;
+        width: 62px;
+        position: absolute;
+        margin-left: 94px;
+        margin-top: -40px;
+    }
+
+        div.merch-item img.merch-add:hover,
+        div.item-added img.merch-add:hover,
+        div.item-not-added img.merch-add:hover
+        {
+            transform: translateY(2px);
+        }
+
+        div.merch-item img.merch-add:active,
+        div.item-added img.merch-add:active,
+        div.item-not-added img.merch-add:active
+        {
+            transform: translateY(4px) rotateX(-70deg);
+            transition: transform linear 0.1s;
+        }
+
+    div.merch-item h1,
+    div.item-added h1,
+    div.item-not-added h1
+    {
+        font-family: Century Gothic;
+        font-size: 32px;
+        padding: 12px 0px;
+        color: rgb(17, 135, 135);
+        font-weight: normal;
+    }
+
+    div.merch-item h2,
+    div.item-added h2,
+    div.item-not-added h2
+    {
+        font-style: normal;
+        color: rgb(75, 75, 75);
+    }
+
+    div.merch-item h3.more
+    {
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all cubic-bezier(0.68, 0.08, 1, 1) 0.3s;
+        font-style: italic;
+        font-size: 13px;
+        font-weight: normal;
+        color: #B8B8B8;
+    }
+
+    div.merch-item h3:hover
+    {
+        color: #118787;
+    }
+
+    div.merch-item h3:active
+    {
+        color: #8aa5a5;
+    }
+
+    div.merch-item h4,
+    div.item-added h4,
+    div.item-not-added h4
+    {
+        font-family: Century Gothic;
+        font-weight: normal;
+        font-style: italic;
+        color: rgb(102, 102, 102);
+        font-size: 12px;
+    }
+
+.item-added
+{
+    border: 2px solid #1dd30f;
+    text-align: center;
+    width: 276px;
+    float: left;
+    margin: 18px;
+    border-radius: 41px;
+}
+
+.item-not-added
+{
+    border: 2px solid #c60505;
+    text-align: center;
+    width: 276px;
+    float: left;
+    margin: 18px;
+    border-radius: 41px;
+}

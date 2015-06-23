@@ -1,0 +1,73 @@
+﻿@model Market.Model.Entities.Customer
+<style type="text/css">
+    li.shopping-catr
+    {
+    }
+
+        li.shopping-catr:hover
+        {
+            cursor: pointer;
+        }
+
+        li.shopping-catr div.cart-column
+        {
+            font-family: Century Gothic;
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        li.shopping-catr b.selected-items-count
+        {
+            position: absolute;
+            margin-left: 66px;
+            z-index: 1;
+            margin-top: 6px;
+            color: rgb(255, 255, 255);
+            text-shadow: 3px 3px rgb(25, 124, 176);
+            font-size: 17px;
+            font-weight: normal;
+        }
+
+        li.shopping-catr img.cart-img
+        {
+            width: 64px;
+            position: absolute;
+            margin-left: 37px;
+            opacity: 0.8;
+            transition: all 0.5s linear;
+            border-radius: 100%;
+        }
+
+            li.shopping-catr img.cart-img:hover
+            {
+                opacity: 1;
+                box-shadow: 4px 4px 5px #807e7e; /* Shadow */
+                -moz-transition: all 1s;
+                -webkit-transition: all 1s;
+                -o-transition: all 1s;
+                cursor: pointer;
+            }
+
+            li.shopping-catr img.cart-img:active
+            {
+                transform: translateY(2px);
+                /*transform: rotate(20deg);*/
+            }
+</style>
+
+<li class="shopping-catr" id="">
+    @*<div id="shopping_cart">
+        @Html.ActionLink("Открыть корзину", "SelectedItems", "Customer", new { cId = Model.IDString }, null)
+    </div>*@
+    <div id="cart-visualization">
+        <b class="selected-items-count">@Model.SelectedItemsCount</b>
+        <img class="cart-img" src="~/Content/imgs/shopping-cart.png" />
+    </div>
+</li>
+
+<script type="text/javascript">
+    $("img.cart-img").click(function (e) {
+        var url = '@Url.Action("SelectedItems", "Customer", new { cId = Model.IDString })';
+        window.location.href = url;
+    });
+</script>

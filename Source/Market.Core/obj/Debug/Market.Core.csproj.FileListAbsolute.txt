@@ -1,0 +1,7 @@
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Core\bin\Debug\Market.Core.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Core\bin\Debug\Market.Core.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Core\obj\Debug\Market.Core.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Core\obj\Debug\Market.Core.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Core\obj\Debug\Market.Core.csprojResolveAssemblyReference.cache
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Core\bin\Debug\Market.Middleware.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Core\bin\Debug\Market.Middleware.pdb

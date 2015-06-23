@@ -1,0 +1,52 @@
+﻿@model Market.Model.Entities.CustomerSelectedItems
+
+<li class="csi-item" id="@Model.IDString">
+    <div class="merchadnise-col">
+        <h3 class="merch-name">
+            @Model.SDM.Merchendise.Name
+        </h3>
+        <h5 class="merch-tags">
+            @Model.SDM.Merchendise.Tags
+        </h5>
+    </div>
+    <div class="salesperson-col">
+        <div class="salesperon-icon">
+            @if (Model.SDM.Salesperson.Gender == Market.Model.Entities.GenderType.Male)
+            { <img src="/Content/imgs/male.png" width="45" />}
+            else
+            { <img src="/Content/imgs/female.png" width="45" />}
+        </div>
+        <div>
+            <h4 class="salesperson-initials">
+                @Model.SDM.Salesperson.Initials.Split(' ')[0]
+            </h4>            
+            <h4 class="salesperson-initials">
+                @Model.SDM.Salesperson.Initials.Split(' ')[1]
+            </h4>
+            <h4 class="salesperson-initials">
+                @Model.SDM.Salesperson.Initials.Split(' ')[2]
+            </h4>
+        </div>
+    </div>
+    <div class="cost-col">
+        <h2 class="merch-cost">
+            @Model.SDM.Cost грн.
+        </h2>
+    </div>
+    <div class="btns-col">
+        <div class="merch-state">
+            @*@Html.HiddenFor(m => m.IsSubmited)*@
+            @if (Model.IsSubmited)
+            {
+                <input class="confirmed-btn" value="Отменить" type="submit" onclick="stateHandler(this);" />
+            }
+            else
+            { 
+                <input class="non-confirmed-btn" value="Подтвердить" type="submit" onclick="stateHandler(this);" />
+            }
+        </div>
+        <div class="merch-delete">
+            <input class="delete-item-btn" value="Удалить" type="submit" onclick="deleteHandler(this);" />
+        </div>
+    </div>
+</li>

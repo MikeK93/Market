@@ -1,0 +1,149 @@
+﻿@model Market.Model.Entities.Spot
+
+<style type="text/css">
+    /*********************spot and salesperson******************/
+
+    div#spot-details
+    {
+        margin-top: 35px;
+        height: 140px;
+        border: 3px solid rgb(248, 246, 246);
+        background-color: rgb(227, 227, 227);
+        /*width: 92%;*/
+    }
+
+        div#spot-details div#spot-info
+        {
+            float: left;
+            /*background-color: rgb(227, 227, 227);*/
+            border-right: 7px solid rgb(218, 218, 218);
+            width: 45%;
+        }
+
+            div#spot-details div#spot-info img#market-img
+            {
+                width: 140px;
+                float: left;
+            }
+
+            div#spot-details div#spot-info div#market-number-etc
+            {
+                height: 45px;
+                float: left;
+                width: 140px;
+                margin-top: 20px;
+            }
+
+                div#spot-details div#spot-info div#market-number-etc h2
+                {
+                    color: #666;
+                    font-style: normal;
+                }
+
+                div#spot-details div#spot-info div#market-number-etc h3
+                {
+                    font-family: 'Century Gothic';
+                    font-style: normal;
+                    color: #4f4e4e;
+                    font-weight: normal;
+                    font-size: 14px;
+                }
+
+                div#spot-details div#spot-info div#market-number-etc h4
+                {
+                    font-family: Century Gothic;
+                    font-style: italic;
+                    font-weight: normal;
+                    font-size: 11px;
+                    color: #A1A1A1;
+                }
+
+    div#salesperson-info
+    {
+        height: 140px;
+        padding: 0px;
+        width: 53.8%;
+    }
+
+        div#salesperson-info div#salesperson-phone-email
+        {
+            float: left;
+            width: 100%;
+            text-align: center;
+        }
+
+        div#salesperson-info div#salesperson-initials
+        {
+            padding: 25px 0px 6px 10px;
+            width: 111px;
+            float: left;
+        }
+
+            div#salesperson-info div#salesperson-initials h4,
+            div#salesperson-info div#salesperson-phone-email pre b
+            {
+                font-family: sans-serif;
+                font-style: italic;
+                font-size: 15px;
+                font-weight: normal;
+                color: #7D7D7D;
+                margin-bottom: 0px;
+                width: 110px;
+            }
+
+    /*************** separator ***********/
+    div#separator
+    {
+        background-color: #E67E22;
+        border-bottom: 8px solid #D35400;
+        height: 31px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        color: #E4E3E3;
+    }
+
+        div#separator pre
+        {
+            font-family: 'Century Gothic';
+            font-size: 20px;
+            padding-top: 3px;
+            letter-spacing: 5px;
+        }
+    
+</style>
+@*<!-- spot and salesperson -->*@
+<div id="spot-details">
+    <div id="spot-info">
+        <img src="/Content/imgs/market.png" id="market-img" />
+        <div id="market-number-etc">
+            <h2 id="market-number">№ @Model.Number</h2>
+            <h4 id="market-start-date">Работает с @Model.DateStart.ToShortDateString()</h4>
+            <h3 id="address"></h3>
+        </div>
+    </div>
+    <div id="salesperson-info" class="salesperson-col">
+        <div class="salesperon-icon" style="padding: 25px 0px 0px 90px;">
+            @if (Model.Salesperson.Gender == Market.Model.Entities.GenderType.Male)
+            { <img src="/Content/imgs/man.png" width="45" />}
+            else
+            { <img src="/Content/imgs/woman.png" width="45" />}
+        </div>
+        <div id="salesperson-initials" style="">
+            <h4>@Model.Salesperson.Initials.Split(' ')[0]</h4>
+            <h4>@Model.Salesperson.Initials.Split(' ')[1]</h4>
+            <h4>@Model.Salesperson.Initials.Split(' ')[2]</h4>
+        </div>
+        <div id="salesperson-phone-email">
+            <pre>Тел.номер.:<b>@Model.Salesperson.PhoneNumber</b></pre>
+            <pre>Email:<b>@Model.Salesperson.Email</b></pre>
+        </div>
+    </div>
+</div>
+
+<div id="separator">
+    <pre>Список товаров</pre>
+</div>
+
+@*<!-- list of merchandise -->*@
+@Html.Partial("_SDMs", Model.SDMs)

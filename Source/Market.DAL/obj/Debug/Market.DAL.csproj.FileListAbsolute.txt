@@ -1,0 +1,16 @@
+C:\Users\Bob\Desktop\DALTest\DALTest\obj\Debug\Market.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Desktop\DALTest\DALTest\obj\Debug\DALTest.pdb
+C:\Users\Bob\Desktop\DALTest\DALTest\bin\Debug\DALTest.pdb
+C:\Users\Bob\Desktop\DALTest\DALTest\bin\Debug\DALTest.dll.config
+C:\Users\Bob\Desktop\DALTest\DALTest\bin\Debug\DALTest.dll
+C:\Users\Bob\Desktop\DALTest\DALTest\obj\Debug\DALTest.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\obj\Debug\Market.DAL.csprojResolveAssemblyReference.cache
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.DAL.dll.config
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.DAL.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.DAL.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.Middleware.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.ServiceCore.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.ServiceCore.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\bin\Debug\Market.Middleware.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\obj\Debug\Market.DAL.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.DAL\obj\Debug\Market.DAL.pdb

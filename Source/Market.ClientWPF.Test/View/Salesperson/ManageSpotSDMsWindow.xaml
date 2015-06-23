@@ -1,0 +1,133 @@
+﻿<Window x:Class="Market.ClientWPF.Test.View.Salesperson.ManageSpotSDMsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ManageSpotSDMsWindow" Height="400" Width="440">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!-- SDMs aka merchandise -->
+        <ListBox Grid.Row="0"
+                 ItemsSource="{Binding SDMs}"
+                 SelectedItem="{Binding SelectedSDM}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="10,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- image -->
+                        <Image Grid.Column="0"
+                               Width="36" Height="36" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\merchandise.ico"/>
+                        <!-- info-->
+                        <Border Grid.Column="1" BorderThickness="0,0,1,0" BorderBrush="#FFB6B6B6"
+                                Padding="4" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <StackPanel>
+                                <!-- name -->
+                                <TextBlock Text="{Binding MerchandiseName}"
+                                               FontFamily="Book Antiqua"
+                                               HorizontalAlignment="Left"/>
+                                <!-- tags -->
+                                <TextBlock Text="{Binding MerchandiseTags}"
+                                               FontSize="10" FontStyle="Italic" Foreground="#FF747474"/>
+                                <!-- dealer -->
+                                <StackPanel Orientation="Horizontal" 
+                                            Margin="0,5,0,0" VerticalAlignment="Center">
+                                    <Image Width="20" Height="20" Margin="0,4,6,0"
+                                           Source="{Binding DealerGenderIcon}"/>
+                                    <TextBlock Text="{Binding DealerInitials}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <!-- spots -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- selected spots -->
+            <ListBox Grid.Column="0" Margin="8,4"
+                     ItemsSource="{Binding SelectedSDM.SpotSDMs}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10,4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- image -->
+                            <Image Grid.Column="0"
+                                   Width="36" Height="36" Margin="6,4"
+                                   Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\spot.ico"
+                                   VerticalAlignment="Center"/>
+                            <!-- info -->
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{Binding MerchandiseSpot, StringFormat=№ {0}}"
+                                           FontSize="12" FontFamily="Book Antiqua"/>
+                                <TextBlock Text="{Binding SpotStartDate, StringFormat=Работает с: {0}}" 
+                                           FontSize="10" FontStyle="Italic"/>
+                                <TextBlock Text="{Binding SpotAddress, StringFormat=Адресс: {0}}" 
+                                           FontSize="10" FontStyle="Italic"/>
+                            </StackPanel>
+                            <!-- delete btn -->
+                            <Button Grid.Column="2" Content="X"
+                                    Command="{Binding DeleteCommand}"
+                                    ToolTip="Удалить товар с этого места."
+                                    VerticalAlignment="Top" Padding="6,0" Margin="10,3" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <!-- add btn -->
+            <Button Grid.Column="1" 
+                    Command="{Binding AddSpotToMerchandiseCommand}"
+                    Content="+" Padding="6,2" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <!-- available spots -->
+            <ListBox Grid.Column="2" Margin="8,4"
+                     ItemsSource="{Binding Spots}"
+                     SelectedItem="{Binding SelectedSpot}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10,4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- image -->
+                            <Image Grid.Column="0"
+                                   Width="36" Height="36" Margin="6,4"
+                                   Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\spot.ico"
+                                   VerticalAlignment="Center"/>
+                            <!-- info -->
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{Binding Number, StringFormat=№ {0}}"
+                                           FontSize="12" FontFamily="Book Antiqua"/>
+                                <TextBlock Text="{Binding ShortDateString, StringFormat=Работает с: {0}}" 
+                                           FontSize="10" FontStyle="Italic"/>
+                                <TextBlock Text="{Binding Address, StringFormat=Адресс: {0}}" 
+                                           FontSize="10" FontStyle="Italic"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Window>

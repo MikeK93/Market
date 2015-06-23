@@ -1,0 +1,12 @@
+<StyleCopSettings Version="105">
+  <Analyzers>
+    <Analyzer AnalyzerId="StyleCopPlus.StyleCopPlusRules">
+      <AnalyzerSettings>
+        <StringProperty Name="AdvancedNaming_PublicInstanceField">$(AaBb):$(AABB)</StringProperty>
+        <StringProperty Name="AdvancedNaming_ProtectedStaticField">_$(AaBb)</StringProperty>
+        <StringProperty Name="AdvancedNaming_Property">$(AaBb):$(A)$(*)$(aabb):$(AABB)</StringProperty>
+        <StringProperty Name="AdvancedNaming_ClassNotInternal">$(AABB):$(AaBb):$(AABB)$(aabb):$(A)$(*)$(AABB)$(aabb):$(A)$(*)$(AABB)</StringProperty>
+      </AnalyzerSettings>
+    </Analyzer>
+  </Analyzers>
+</StyleCopSettings>

@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.DAL", "Market.DAL\Market.DAL.csproj", "{1637029F-3B8D-4930-A9E9-4C416E9F6791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Client", "Market.UI\Market.Client.csproj", "{DB4947F2-849D-4FB0-BA97-958C01AD5840}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.ServiceCore", "Market.Core\Market.ServiceCore.csproj", "{A6EB0F12-4ACF-41E3-B30A-1AD645D19F90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Middleware", "Middleware\Market.Middleware.csproj", "{685422A5-585A-438F-851D-BE4966AAB36A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketService", "MarketServer\MarketService.csproj", "{D8A50F3B-5771-4332-A404-4CDAFA0E2669}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Client.Test", "Market.Client.Test\Market.Client.Test.csproj", "{54A94395-CB14-4FB0-A442-E2FFE6C0EB87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.ClientWPF", "Market.ClientWPF.Test\Market.ClientWPF.csproj", "{6CC200A1-F129-4F5D-A92D-98E1B3FEF997}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1637029F-3B8D-4930-A9E9-4C416E9F6791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1637029F-3B8D-4930-A9E9-4C416E9F6791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1637029F-3B8D-4930-A9E9-4C416E9F6791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1637029F-3B8D-4930-A9E9-4C416E9F6791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB4947F2-849D-4FB0-BA97-958C01AD5840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB4947F2-849D-4FB0-BA97-958C01AD5840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB4947F2-849D-4FB0-BA97-958C01AD5840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB4947F2-849D-4FB0-BA97-958C01AD5840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6EB0F12-4ACF-41E3-B30A-1AD645D19F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6EB0F12-4ACF-41E3-B30A-1AD645D19F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6EB0F12-4ACF-41E3-B30A-1AD645D19F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6EB0F12-4ACF-41E3-B30A-1AD645D19F90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685422A5-585A-438F-851D-BE4966AAB36A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685422A5-585A-438F-851D-BE4966AAB36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685422A5-585A-438F-851D-BE4966AAB36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685422A5-585A-438F-851D-BE4966AAB36A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A50F3B-5771-4332-A404-4CDAFA0E2669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A50F3B-5771-4332-A404-4CDAFA0E2669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A50F3B-5771-4332-A404-4CDAFA0E2669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A50F3B-5771-4332-A404-4CDAFA0E2669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A94395-CB14-4FB0-A442-E2FFE6C0EB87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A94395-CB14-4FB0-A442-E2FFE6C0EB87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A94395-CB14-4FB0-A442-E2FFE6C0EB87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A94395-CB14-4FB0-A442-E2FFE6C0EB87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC200A1-F129-4F5D-A92D-98E1B3FEF997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC200A1-F129-4F5D-A92D-98E1B3FEF997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC200A1-F129-4F5D-A92D-98E1B3FEF997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC200A1-F129-4F5D-A92D-98E1B3FEF997}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

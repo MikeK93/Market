@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1637029F-3B8D-4930-A9E9-4C416E9F6791}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Market.DAL</RootNamespace>
+    <AssemblyName>Market.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MarketDAL.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\IRoleReader.cs" />
+    <Compile Include="Entities\Bank.cs" />
+    <Compile Include="Entities\BankDealer.cs" />
+    <Compile Include="Entities\BankSalesperson.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\CustomerSelectedItems.cs" />
+    <Compile Include="Entities\Dealer.cs" />
+    <Compile Include="Entities\DM.cs" />
+    <Compile Include="Entities\MakerCompany.cs" />
+    <Compile Include="Entities\Merchandise.cs" />
+    <Compile Include="Entities\MerchandiseCategory.cs" />
+    <Compile Include="Entities\SDM.cs" />
+    <Compile Include="Entities\SecurityType.cs" />
+    <Compile Include="Entities\Spot.cs" />
+    <Compile Include="Entities\SpotSDM.cs" />
+    <Compile Include="Entities\Storage.cs" />
+    <Compile Include="Entities\User.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Mappers\BankDealerMapper.cs" />
+    <Compile Include="Mappers\BankMapper.cs" />
+    <Compile Include="Mappers\BankSalespersonMapper.cs" />
+    <Compile Include="Mappers\CategoryMapper.cs" />
+    <Compile Include="Mappers\CustomerMapper.cs" />
+    <Compile Include="Mappers\CustomerSelectedItemsMapper.cs" />
+    <Compile Include="Mappers\DealerMapper.cs" />
+    <Compile Include="Mappers\DMMapper.cs" />
+    <Compile Include="Mappers\MakerCompanyMapper.cs" />
+    <Compile Include="Mappers\MerchandiseCategoryMapper.cs" />
+    <Compile Include="Mappers\MerchandiseMapper.cs" />
+    <Compile Include="Mappers\SDMMapper.cs" />
+    <Compile Include="Mappers\SecurityTypeMapper.cs" />
+    <Compile Include="Mappers\SpotMapper.cs" />
+    <Compile Include="Mappers\SpotSDMMapper.cs" />
+    <Compile Include="Mappers\StorageMapper.cs" />
+    <Compile Include="Mappers\UserMapper.cs" />
+    <Compile Include="Projections\MerchandiseToDealer.cs" />
+    <Compile Include="Projections\SDMProjection.cs" />
+    <Compile Include="Readers\BankDealerReader.cs" />
+    <Compile Include="Readers\BankReader.cs" />
+    <Compile Include="Readers\BankSalespersonReader.cs" />
+    <Compile Include="Readers\CategoryReader.cs" />
+    <Compile Include="Readers\CustomerReader.cs" />
+    <Compile Include="Readers\CustomerSelectedItemsReader.cs" />
+    <Compile Include="Readers\DealerReader.cs" />
+    <Compile Include="Readers\DMReader.cs" />
+    <Compile Include="Readers\MakerCompanyReader.cs" />
+    <Compile Include="Readers\MerchandiseCategoryReader.cs" />
+    <Compile Include="Readers\MerchandiseReader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Salesperson.cs" />
+    <Compile Include="Mappers\SalespersonMapper.cs" />
+    <Compile Include="Readers\SDMReader.cs" />
+    <Compile Include="Readers\SalespersonReader.cs" />
+    <Compile Include="Readers\SecurityTypeReader.cs" />
+    <Compile Include="Readers\SpotReader.cs" />
+    <Compile Include="Readers\SpotSDMReader.cs" />
+    <Compile Include="Readers\StorageReader.cs" />
+    <Compile Include="Readers\UserReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="MarketDAL.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Market.Core\Market.ServiceCore.csproj">
+      <Project>{a6eb0f12-4acf-41e3-b30a-1ad645d19f90}</Project>
+      <Name>Market.ServiceCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Middleware\Market.Middleware.csproj">
+      <Project>{685422a5-585a-438f-851d-be4966aab36a}</Project>
+      <Name>Market.Middleware</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

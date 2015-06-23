@@ -1,0 +1,12 @@
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\bin\Debug\Market.Client.Test.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\bin\Debug\Market.Client.Test.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\bin\Debug\Market.ClientUI.exe
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\bin\Debug\Market.Middleware.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\bin\Debug\Market.ClientUI.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\bin\Debug\Market.Middleware.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\obj\Debug\Market.Client.Test.csprojResolveAssemblyReference.cache
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\obj\Debug\Market.Client.Test.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\obj\Debug\Market.Client.Test.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\bin\Debug\Market.Client.Test.dll.config
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\bin\Debug\Market.ClientWPF.Test.exe
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.Client.Test\bin\Debug\Market.ClientWPF.Test.pdb

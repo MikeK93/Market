@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market", "Market\Market.csproj", "{EC441C83-79EA-4AF5-B24F-87374A6A5C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Tests", "Market.Tests\Market.Tests.csproj", "{EF74E7A0-D856-425F-ABBE-B2C380283899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Security", "Market.Security\Market.Security.csproj", "{BEA10C93-76C6-438F-91F0-8051B972914A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC441C83-79EA-4AF5-B24F-87374A6A5C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC441C83-79EA-4AF5-B24F-87374A6A5C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC441C83-79EA-4AF5-B24F-87374A6A5C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC441C83-79EA-4AF5-B24F-87374A6A5C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF74E7A0-D856-425F-ABBE-B2C380283899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF74E7A0-D856-425F-ABBE-B2C380283899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF74E7A0-D856-425F-ABBE-B2C380283899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF74E7A0-D856-425F-ABBE-B2C380283899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA10C93-76C6-438F-91F0-8051B972914A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA10C93-76C6-438F-91F0-8051B972914A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA10C93-76C6-438F-91F0-8051B972914A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA10C93-76C6-438F-91F0-8051B972914A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

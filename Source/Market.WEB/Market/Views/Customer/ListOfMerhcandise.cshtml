@@ -1,0 +1,19 @@
+﻿@model Market.Models.ViewModel.ListOfMerchandiseVM
+
+@{
+    ViewBag.Title = "Список товаров";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!-- menu + shopping_cart -->
+@Html.Partial("_SideMenu", Model.Customer)
+
+@*<!-- content -->*@
+<div class="content_wrapper" style="width: 65%; margin-left: 6%;">
+    @*<!-- market map -->*@
+    <div id="map_canvas" style="width: 640px; height: 400px;"></div>
+    @*selected store details*@
+    <div id="store-details">
+        <div id="content"></div>
+    </div>
+</div>

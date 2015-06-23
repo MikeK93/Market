@@ -1,0 +1,6 @@
+C:\Users\Bob\Desktop\DALTest\DALTest\bin\Debug\DALTest.exe.config
+C:\Users\Bob\Desktop\DALTest\DALTest\obj\Debug\DALTest.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Desktop\DALTest\DALTest\bin\Debug\DALTest.exe
+C:\Users\Bob\Desktop\DALTest\DALTest\bin\Debug\DALTest.pdb
+C:\Users\Bob\Desktop\DALTest\DALTest\obj\Debug\DALTest.exe
+C:\Users\Bob\Desktop\DALTest\DALTest\obj\Debug\DALTest.pdb

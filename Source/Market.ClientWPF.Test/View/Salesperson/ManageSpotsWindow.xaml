@@ -1,0 +1,102 @@
+﻿<Window x:Class="Market.ClientWPF.Test.View.Salesperson.ManageSpotsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:model="clr-namespace:Market.ViewModel.DataVM"
+        Title="ManageSpotsWindow" Height="400" Width="340">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type model:SpotVM}" >
+            <Grid Margin="10,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <!-- image -->
+                <Image Grid.Column="0"
+                                               Width="36" Height="36" Margin="6,4"
+                                               Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\spot.ico"
+                                               VerticalAlignment="Center"/>
+                <!-- info -->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="{Binding Number, StringFormat=№ {0}}"
+                                                       FontSize="12" FontFamily="Book Antiqua"/>
+                    <TextBlock Text="{Binding ShortDateString, StringFormat=Работает с: {0}}" 
+                                                       FontSize="10" FontStyle="Italic"/>
+                    <TextBlock Text="{Binding Address, StringFormat=Адресс: {0}}" 
+                                                       FontSize="10" FontStyle="Italic"/>
+                    <TextBlock Text="{Binding SDMsCountString}" 
+                               FontSize="10" FontStyle="Italic"/>
+                    <!-- maker -->
+                    <Expander>
+                        <Expander.Header>
+                            <TextBlock Text="Производитель"/>
+                        </Expander.Header>
+                        <Border CornerRadius="2" 
+                                            BorderBrush="#FFC3C3C3" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="{Binding MakerCompany.Name}"
+                                                       FontFamily="Bookman Old Style" FontSize="11" FontStyle="Italic"/>
+                                <TextBlock Text="{Binding MakerCompany.FullAddress}"
+                                                       FontFamily="Bookman Old Style" FontSize="11" FontStyle="Italic"/>
+                            </StackPanel>
+                        </Border>
+                    </Expander>
+                    <!-- security -->
+                    <Expander>
+                        <Expander.Header>
+                            <TextBlock Text="Защита"/>
+                        </Expander.Header>
+                        <Border CornerRadius="2" 
+                                            BorderBrush="#FFC3C3C3" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="{Binding SecurityType.Name}"
+                                                       FontFamily="Bookman Old Style" FontSize="11" FontStyle="Italic"/>
+                                <TextBlock Text="{Binding SecurityType.Cost, StringFormat=Цена: {0} грн.}"
+                                                       FontFamily="Bookman Old Style" FontSize="11" FontStyle="Italic"/>
+                            </StackPanel>
+                        </Border>
+                    </Expander>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- my spots -->
+        <GroupBox Grid.Column="0">
+            <GroupBox.Header>
+                <TextBlock Text="Ваши места" 
+                           FontSize="11" FontFamily="Century Gothic" FontStyle="Italic"/>
+            </GroupBox.Header>
+            <ListBox ItemsSource="{Binding Spots}"
+                     SelectedItem="{Binding SelectedSpot}"/>
+        </GroupBox>
+
+        <!-- btns '+' & '-' -->
+        <StackPanel Grid.Column="1" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="+"
+                    Margin="6,3" Padding="6,2"
+                    ToolTip="Добавить новое место."
+                    Command="{Binding AddNewSpotCommand}"/>
+            <Button Content="-"
+                    Margin="6,3" Padding="6,2"
+                    ToolTip="Удалить выбраное место."
+                    Command="{Binding RemoveOldSpotCommand}"/>
+        </StackPanel>
+
+        <!-- available spots -->
+        <GroupBox Grid.Column="2">
+            <GroupBox.Header>
+                <TextBlock Text="Доступные места" 
+                           FontSize="11" FontFamily="Century Gothic" FontStyle="Italic"/>
+            </GroupBox.Header>
+            <ListBox ItemsSource="{Binding AllAvailableSpots}"
+                     SelectedItem="{Binding SelectedNewSpot}"/>
+        </GroupBox>
+    </Grid>
+</Window>

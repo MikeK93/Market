@@ -1,0 +1,148 @@
+﻿@model  Market.Models.ViewModel.MarketMapVM
+@{
+    ViewBag.Title = "Карта маркета";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<style type="text/css">
+    div.info
+    {
+        text-align: center;
+        font-family: 'Century Gothic';
+        width: 175px;
+    }
+
+        div.info span
+        {
+            font-size: 17px;
+            font-weight: bold;
+            float: none;
+        }
+
+        div.info h2
+        {
+            font-size: 14px;
+            font-weight: normal;
+            float: none;
+        }
+</style>
+
+<!-- menu + shopping_cart -->
+@Html.Partial("_SideMenu", Model.Customer)
+
+@*<!-- content -->*@
+<div class="content_wrapper" style="width: 65%; margin-left: 6%;">
+    @* market map *@
+    <div id="map_canvas" style="width: 640px; height: 400px;"></div>
+    @*selected store details*@
+    <div id="store-details">
+        <div id="content"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        initialize();
+    });
+
+    var sdmBorderColor = "#CCC9C9";
+    var map;
+
+    // Method-initialize-begin
+    function initialize() {
+        // initialize map
+        google.maps.visualRefresh = true;
+        var kiev = new google.maps.LatLng(50.438129, 30.510375);
+        var mapOptions = {
+            zoom: 11,
+            center: kiev,
+            mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP
+        };
+        map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        // adding pins to map
+        @foreach (var item in Model.AvailableSpots)
+        {
+            <text>
+                var id = '@item.ID';
+                var lat = '@item.Address.Replace(",", "").Split(' ')[0]';
+                var long = '@item.Address.Replace(",", "").Split(' ')[1]';
+                var number = '@item.Number';
+                addNewMarker(id, lat, long, number);
+            </text>
+        }
+    }// Method-initialize-end
+
+    // Method-addNewMarker-begin
+    function addNewMarker(id, lat, long, number) {
+        // create a marker
+        var location = new google.maps.LatLng(lat, long);
+        var marker = new google.maps.Marker({
+            id: id,
+            position: location,
+            map: map,
+            title: number
+        });
+        // set an icon
+        marker.setIcon("/Content/imgs/pin.png");
+        // create info window
+        var infowindow = new google.maps.InfoWindow({
+            content:
+            "<div class='info'>" +
+                "<div class='row' style='float: left; width:170px; margin-bottom: 2px;'>" +
+                    "<div class='column' style='width: 40px; float:left;'>" +
+                        "<img src='/Content/imgs/market-icon.png' style='margin-top: 3px;'/>" +
+                    "</div>" +
+                "<div class='column' style='width: 127px;'>" +
+                    "<h2>Номер магазина:</h2>" +
+                    "<span style='font-size:16px; visibility: visible; color: #1e1e1e;'>" + number + "</span>" +
+                "</div>" +
+            "</div>" +
+            "<div class='row' style='width: 100%; text-align: center;'>" +
+                "<span class='address' style='font-size: 14px; font-style: normal; font-weight: normal; visibility: visible; color: #000;'></span>" +
+                "<span style='font-size: 9px; font-style: italic; font-weight: normal; visibility: visible; color: #000;'>" + lat + "; " + long + "</span>" +
+            "</div>" +
+            "</div>"
+        });
+
+        // create event handler
+        google.maps.event.addListener(marker, 'click', function (sender) {
+            infowindow.open(map, marker);
+            marker_OnClick(sender, marker["id"]);
+        });
+    }// Method-addNewMarker-end
+
+    // Method-marker_OnClick-begin
+    function marker_OnClick(sender, markerId) {
+        // request to server to get store
+        $.ajax({
+            url: '@Url.Action("GetStore")',
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ sId: markerId }),
+            datatype: "html",
+            success: function (data) { successAjax(data, sender); },
+            error: function () {
+                alert("error while loading spot info in market map... lay down and cry :'(");
+            }
+        });
+    }// Method-marker_OnClick-end
+
+    // Method-successAjax-begin
+    function successAjax(data, sender) {
+        $("div#store-details").children("div#content").children("").remove();
+        $("div#store-details").children("div#content").append(data);
+        // get address
+        var latlng = new google.maps.LatLng(sender.latLng.lat(), sender.latLng.lng());
+        var geocoder = geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[1]) {
+                    var address = results[1].formatted_address;
+                    $("div.row span.address").text(address);
+                    $("h3#address").text(address);
+                }
+            }
+        });
+    }// Method-successAjax-end
+</script>

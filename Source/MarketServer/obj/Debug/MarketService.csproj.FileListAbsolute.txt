@@ -1,0 +1,12 @@
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\bin\Debug\MarketService.exe.config
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\bin\Debug\MarketService.exe
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\bin\Debug\MarketService.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\bin\Debug\Market.DAL.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\bin\Debug\Market.Middleware.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\bin\Debug\Market.ServiceCore.dll
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\bin\Debug\Market.ServiceCore.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\bin\Debug\Market.DAL.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\bin\Debug\Market.Middleware.pdb
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\obj\Debug\MarketService.csprojResolveAssemblyReference.cache
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\obj\Debug\MarketService.exe
+D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\MarketServer\obj\Debug\MarketService.pdb

@@ -1,0 +1,267 @@
+﻿@model Market.Models.ViewModel.ListOfMerchandiseVM
+
+@{
+    ViewBag.Title = "Список товаров";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style type="text/css">
+    div.search-box
+    {
+        padding: 10px;
+        width: 100%;
+    }
+
+        div.search-box input.item-to-seek
+        {
+            width: 81%;
+            font-family: Century Gothic;
+            font-size: 16px;
+            height: 25px;
+        }
+
+        div.search-box div.categories-placeholder
+        {
+            float: left;
+            width: 100%;
+            border-bottom: 2px solid #2791AE;
+            margin-top: 5px;
+        }
+
+            div.search-box div.categories-placeholder div#filters
+            {
+                display: none;
+                position: relative;
+                zoom: 1;
+                color: #A19C9C;
+            }
+
+                div.search-box div.categories-placeholder div#filters div.sort-block
+                {
+                    float: left;
+                    margin-left: 20px;
+                    margin-bottom: 12px;
+                }
+
+                div.search-box div.categories-placeholder div#filters h3#header-categories,
+                div.search-box div.categories-placeholder div#filters h3#header-sort
+                {
+                    float: left;
+                    width: 100%;
+                    text-align: center;
+                    border-bottom: 2px solid #40A8BB;
+                    margin: 10px 0px;
+                    background-color: #65CEDB;
+                    color: #fff;
+                    font-weight: normal;
+                    letter-spacing: 1px;
+                }
+            /***********image expanded*****************/
+            div.search-box div.categories-placeholder img.not-expanded-img
+            {
+                position: absolute;
+                width: 16px;
+                margin-left: 250px;
+                margin-top: 3px;
+            }
+            /***********image not expanded*************/
+            div.search-box div.categories-placeholder img.expanded-img
+            {
+                position: absolute;
+                width: 16px;
+                margin-left: 250px;
+                margin-top: 3px;
+                /*transform: rotateX(-180deg);*/
+            }
+            /********************/
+            div.search-box div.categories-placeholder h3#header
+            {
+                border-bottom: 2px solid rgb(39, 145, 174);
+                font-family: Century Gothic;
+                font-weight: normal;
+                font-size: 16px;
+                letter-spacing: 1px;
+                text-align: center;
+                background-color: rgb(46, 187, 204);
+                color: #FFF;
+                cursor: pointer;
+            }
+
+            div.search-box div.categories-placeholder ul.categiries-list
+            {
+                position: relative;
+                zoom: 1;
+                float: left;
+            }
+
+                div.search-box div.categories-placeholder ul.categiries-list li.category-item-placeholder
+                {
+                    position: relative;
+                    zoom: 1;
+                    float: left;
+                    width: 25%;
+                    color: #A19C9C;
+                }
+
+    li.category-item-placeholder div.category-item
+    {
+        cursor: pointer;
+    }
+
+        li.category-item-placeholder div.category-item input
+        {
+            float: left;
+            cursor:pointer;
+        }
+
+        li.category-item-placeholder div.category-item h3
+        {
+            font-size: 14px;
+            font-weight: normal;
+            font-family: Century Gothic;
+        }
+
+    .category-label
+    {
+        font-family: 'Century Gothic';
+        font-size: 14px;
+        cursor: pointer;
+    }
+</style>
+
+<!-- menu + shopping_cart -->
+@Html.Partial("~/Views/Customer/_SideMenu.cshtml", Model.Customer)
+
+@*<!-- content -->*@
+<div class="content_wrapper" style="width: 65%; margin-left: 6%;">
+    <div class="search-box">
+        <input type="text" class="item-to-seek" data-market-autocomplete="@Url.Action("Autocomplete")"/>
+        <input type="button" class="confirmed-btn" value="Искать" id="seek-btn" />
+
+        <div class="categories-placeholder">
+            <img src="~/Content/imgs/expand.png" class="not-expanded-img" />
+            <h3 id="header">Фильтры</h3>
+            <div id="filters">
+                <h3 id="header-categories">Категории</h3>
+                <ul class="categiries-list">
+                    @foreach (var category in Model.Categories)
+                    {
+                        <li class="category-item-placeholder">
+                            <div class="category-item">
+                                <input type="checkbox" name="@category" id="@category" class="category-checkbox"/>
+                                <label for="@category" class="category-label">@category</label>
+                            </div>
+                        </li>
+                    }
+                </ul>
+                <h3 id="header-sort">Сортировка</h3>
+                <div class="sort-block">
+                    <input type="radio" id="cost-up" onclick="onCheck(this);" class="0" />
+                    <label for="cost-up" class="category-label">Цены по возрастанию.</label>
+                </div>
+                <div class="sort-block">
+                    <input type="radio" id="cost-down" onclick="onCheck(this);" class="1" />
+                    <label for="cost-down" class="category-label">Цены по убыванию.</label>
+                </div>
+                <div class="sort-block">
+                    <input type="radio" id="name-up" onclick="onCheck(this);" class="2" />
+                    <label for="name-up" class="category-label">От А до Я</label>
+                </div>
+                <div class="sort-block">
+                    <input type="radio" id="name-down" onclick="onCheck(this);" class="3" />
+                    <label for="name-down" class="category-label">От Я до А</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="merch-list">
+        @Html.Partial("_SpotSDMs", Model.AvailableSpotSDMs)
+    </div>
+</div>
+
+<script type="text/javascript">
+    var selectedCategories = [];
+    var sortType = 0;
+
+    // Autocomplete
+    $(function () {
+        var createAutocomplete = function () {
+            var $input = $(this); selectedCategories = [];
+            // add categories names in selectedCategories array
+            // 
+            $("input.category-checkbox").each(function (index, element) {
+                if ($(element).is(":checked")) {
+                    selectedCategories.push($(element).attr("id"));
+                }
+            });
+
+            var options = {
+                source: $input.attr("data-market-autocomplete"),
+                data: { "term": $input.val, "categories": selectedCategories.toString() }
+            };
+
+            $input.autocomplete(options);
+        }
+
+        $("input[data-market-autocomplete]").each(createAutocomplete);
+
+    });
+
+    // Button find merchandise
+    $("input#seek-btn").click(function (event) {
+        var searchTerm = $("input.item-to-seek").val();
+        selectedCategories = [];
+        // add categories names in selectedCategories array
+        // 
+        $("input.category-checkbox").each(function (index, element) {
+            if ($(element).is(":checked")) {
+                selectedCategories.push($(element).attr("id"));
+            }
+        });
+        // ajax call
+        //
+        alert("searching " + searchTerm + " in " + selectedCategories.toString() + " categories.");
+        $.ajax({
+            url: '@Url.Action("Index")',
+            type: "GET",
+            contentType: 'application/json; charset=utf-8',
+            data: { 'cId': '@Model.CustomerId', 'searchTerm': searchTerm, 'categories': selectedCategories.toString(), 'sortType': sortType },
+            datatype: "html",
+            success: function (data) {
+                $("div#merch-list").children().remove();
+                $("div#merch-list").append(data);
+            },
+            error: function () {
+                alert("error :'(");
+            }
+        });
+    });// Button find merchandise end
+
+    // Expand/Hide filters
+    $("div.categories-placeholder h3#header").click(function (event) {
+        event.preventDefault();
+        var placeholder = $("div#filters");
+        var imgExpander = $("img");
+
+        if (placeholder.is(":visible")) {
+            $(placeholder).slideUp("slow", function () {
+                imgExpander.removeClass("expanded-img", 10, "linear", null);
+                imgExpander.addClass("non-expanded-img", 10, "linear", null);
+            });
+
+        } else {
+            $(placeholder).slideDown("slow", function () {
+                imgExpander.removeClass("non-expanded-img", 10, "linear", null);
+                imgExpander.addClass("expanded-img", 10, "linear", null);
+            });
+        }
+    });// Expand/Hide filters end
+
+    // OnCheck 
+    function onCheck(sender) {
+        var checkedRadioBtn = $('input[type="radio"]:checked');
+        $(checkedRadioBtn).prop('checked', false);
+        sender.checked = true;
+        sortType = $(sender).attr("class");
+    }// OnCheck end
+</script>

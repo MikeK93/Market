@@ -1,0 +1,264 @@
+﻿<Window x:Class="Market.ClientWPF.Test.View.Dealer.DealerMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DealerMainWindow" Height="450" Width="525.564"
+        Closing="Window_Closing">
+    <Grid>
+        <TabControl>
+            <TabItem Name="tabPersonalInfo">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="35" Source="D:/Files/Studying/Лабораторки/EXAMPLES/EpamClasses/session5 (WPF)/Market/CustomerWindows/CustomerWindows/Images/2.ico"/>
+                        <TextBlock Text="Информация" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Expander Grid.Row="0"
+                                          BorderThickness="1"
+                                          Margin="10,5,10,10">
+                                <Expander.Header>
+                                    <TextBlock Text="Персональная информация" FontSize="10" FontStyle="Italic"/>
+                                </Expander.Header>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Имя:"></TextBlock>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Отчество:"></TextBlock>
+                                    <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Фамилия:"></TextBlock>
+                                    <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Email:"></TextBlock>
+                                    <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Номер телефона:"></TextBlock>
+                                    <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Gender:"></TextBlock>
+
+                                    <TextBox Grid.Row="0" Grid.Column="1" Margin="2,4,0,4" Text="{Binding FirstName}"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" Margin="2,4,0,4" Text="{Binding MiddleName}"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" Margin="2,4,0,4" Text="{Binding LastName}"/>
+                                    <TextBox Grid.Row="3" Grid.Column="1" Margin="2,4,0,4" Text="{Binding Email}"/>
+                                    <TextBox Grid.Row="4" Grid.Column="1" Margin="2,4,0,4" Text="{Binding PhoneNumber}"/>
+                                    <ComboBox Grid.Row="5" Grid.Column="1" Margin="2 4 0 4"
+                                              ItemsSource="{Binding Genders}"
+                                              SelectedItem="{Binding Gender}"/>
+                                </Grid>
+                            </Expander>
+
+                            <Expander Grid.Row="1" BorderThickness="1" Margin="10,4">
+                                <Expander.Header>
+                                    <TextBlock Text="Аккаунт" FontSize="10" FontStyle="Italic"/>
+                                </Expander.Header>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Login:"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Password:"/>
+                                    <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,4,4,0" Text="Comfirm password:"/>
+
+                                    <TextBox Grid.Row="0" Grid.Column="1" Margin="2,4,0,4" Text="{Binding NewLogin}"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" Margin="2,4,0,4" Text="{Binding NewPWord}"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" Margin="2,4,0,4" Text="{Binding NewPWordComfirm}"/>
+                                </Grid>
+                            </Expander>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2">
+                        <Button 
+                                Content="Сохранить"
+                                Command="{Binding SavePersonalInformationCommand}"
+                                Margin="10,5"
+                                Padding="5,2"
+                                HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="tabMyMerchandise">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="35" Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\myMerchendise.ico"/>
+                        <TextBlock Text="Мой товар" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <!-- List of selected merchandise. AKA DealerMerchandise -->
+                    <ListBox Grid.Row="0" ItemsSource="{Binding DMs}"
+                             SelectedItem="{Binding SelectedDM}"
+                             Margin="3">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="0, 0, 0, 1" BorderBrush="#FFB0B0B0" Margin="0, 0, 0, 5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" 
+                                           Width="30" Height="30" Margin="2,5,8,2"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                                           Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\merchandise.ico"/>
+                                        <Grid Grid.Column="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <!-- Name -->
+                                            <TextBlock Grid.Row="0"
+                                                   FontSize="12"
+                                                   Text="{Binding MerchandiseName}"/>
+                                            <!-- Tags -->
+                                            <TextBlock Grid.Row="1"
+                                                   FontSize="10" FontStyle="Italic" Foreground="#FF979797"
+                                                   Text="{Binding MerchandiseTags}"/>
+                                            <!-- Cost -->
+                                            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                                <TextBlock Text="Ваша цена:" FontSize="11" Margin="0,4,8,4"
+                                                       VerticalAlignment="Center" />
+                                                <TextBox Text="{Binding Cost}"                                                     
+                                                     Margin="0,4,10,4" 
+                                                     VerticalAlignment="Center">
+                                                    <Validation.ErrorTemplate>
+                                                        <ControlTemplate>
+                                                            <StackPanel>
+                                                                <!-- Placeholder for the TextBox itself -->
+                                                                <AdornedElementPlaceholder x:Name="textBox"/>
+                                                                <ItemsControl ItemsSource="{Binding}">
+                                                                    <ItemsControl.ItemTemplate>
+                                                                        <DataTemplate>
+                                                                            <TextBlock Text="{Binding ErrorContent}" Foreground="Red"
+                                                                                   FontSize="9" FontStyle="Italic"/>
+                                                                        </DataTemplate>
+                                                                    </ItemsControl.ItemTemplate>
+                                                                </ItemsControl>
+                                                            </StackPanel>
+                                                        </ControlTemplate>
+                                                    </Validation.ErrorTemplate>
+                                                </TextBox>
+                                                <Button Content="Принять" Margin="4,2" Padding="4,2"
+                                                    Command="{Binding SaveCostCommand}"
+                                                    VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <!-- Buttons for Delete and Manage -->
+                    <StackPanel Grid.Row="1"
+                                Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="Удалить" Padding="8,2" Margin="2,4,8,4"
+                                Command="{Binding DeleteCommand}"
+                                ToolTip="Удалить выбраный товар."/>
+                        <Button Content="Управлять" Padding="8,2" Margin="2,4,8,4"
+                                Command="{Binding ManageCommand}"
+                                ToolTip="Добавить или удалить товар."/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="tabMyClients">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="35" Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Data\clients.ico"/>
+                        <TextBlock Text="Мой клиенты" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- List of clients -->
+                    <ListBox Grid.Column="0" ItemsSource="{Binding Clients}"
+                             SelectedItem="{Binding SelectedClient}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="4,8">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                           Width="30" Height="30"
+                                           VerticalAlignment="Center"
+                                           Source="{Binding GenderIcon}"/>
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock FontSize="12" 
+                                                   Text="{Binding SalespersonFLNames}"/>
+                                        <TextBlock FontSize="10" 
+                                                   Text="{Binding SalespersonPhoneNumber}"/>
+                                        <TextBlock FontSize="10" 
+                                                   Text="{Binding SalespersonEmail}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <!-- List of selected items -->
+                    <ListBox Grid.Column="1"
+                             ItemsSource="{Binding SelectedClientMerchandise}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="4,8" BorderThickness="0,0,0,1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0"
+                                           Width="30" Height="30"
+                                           VerticalAlignment="Center"
+                                           Source="D:\Files\Studying\Лабораторки\EXAMPLES\EpamClasses\Market\Market\Source\Market.ClientWPF.Test\Assets\merchandise.ico"/>
+                                        <StackPanel Grid.Column="1">
+                                            <TextBlock FontSize="12" 
+                                                   Text="{Binding MerchandiseName}"/>
+                                            <TextBlock FontSize="11" 
+                                                   Text="{Binding MerchandiseCost}"/>
+                                            <TextBlock FontSize="10" FontStyle="Italic" Foreground="#FF9C9C9C"
+                                                   Text="{Binding MerchandiseTags}"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
